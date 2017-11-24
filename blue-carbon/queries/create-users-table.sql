@@ -1,0 +1,1 @@
+CREATE TABLE `blue_carbon`.`users` ( `id` INT(64) NOT NULL AUTO_INCREMENT , `username` VARCHAR(128) CHARACTER SET ascii COLLATE ascii_general_ci NOT NULL , `password` VARCHAR(255) CHARACTER SET ascii COLLATE ascii_general_ci NOT NULL , `e-mail` VARCHAR(320) CHARACTER SET ascii COLLATE ascii_general_ci NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;

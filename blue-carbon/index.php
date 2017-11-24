@@ -1,3 +1,7 @@
+<?php
+  require_once 'red-iron/database.php';
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -5,11 +9,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project: Blue Carbon</title>
     <link rel="stylesheet" href="styles/bootstrap-grid.min.css">
-    <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/header.css">
-    <link rel="stylesheet" href="styles/navigation.css">
-    <link rel="stylesheet" href="styles/footer.css">
-    <link rel="stylesheet" href="styles/fonts.css">
+    <link rel="stylesheet" href="styles/desktop/main.css">
+    <link rel="stylesheet" href="styles/desktop/header.css">
+    <link rel="stylesheet" href="styles/desktop/navigation.css">
+    <link rel="stylesheet" href="styles/desktop/footer.css">
+    <link rel="stylesheet" href="styles/desktop/fonts.css">
+    <link rel="stylesheet" href="styles/desktop/thumbnail.css">
   </head>
   <body>
     <header class="header">
@@ -38,6 +43,7 @@
       <div class="container">
         <!-- Portfolio -->
         <h1 id="portfolio">Portfolio</h1>
+        <p> <input type="text" name="" value=""> </p>
         <section class="row">
           <?php include 'views/portfolio.php'; ?>
         </section>
