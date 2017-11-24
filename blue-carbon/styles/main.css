@@ -1,0 +1,33 @@
+*
+{
+  margin: 0;
+}
+
+body,
+html
+{
+  background-color: #FAFAFA;
+  height: 100%;
+}
+
+header
+{
+  background-color: #FF0000;
+}
+
+footer
+{
+  background-color: #00FF00;
+}
+
+#content
+{
+  background-color: #FFFFFF;
+}
+
+.container-fluid
+{
+  min-width: 100%;
+  min-height: 100%;
+  background-color: #666666;
+}
