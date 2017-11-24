@@ -1,13 +1,9 @@
-*
-{
-  margin: 0;
-}
-
 body,
 html
 {
   background-color: #FAFAFA;
   height: 100%;
+  margin: 0;
 }
 
 header
@@ -18,16 +14,18 @@ header
 footer
 {
   background-color: #00FF00;
+  height: 64px;
+  margin-top: -50px;
 }
 
 #content
 {
+  padding: 100%;
   background-color: #FFFFFF;
 }
 
-.container-fluid
+.page-wrapper
 {
-  min-width: 100%;
   min-height: 100%;
   background-color: #666666;
 }
