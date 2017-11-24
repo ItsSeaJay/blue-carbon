@@ -9,7 +9,7 @@
     echo '<div class="col-lg-4 thumbnail text-center">';
     echo '<img src="http://via.placeholder.com/640x480" alt="Lorem Pixel">';
     echo '<h1>' . $row->name . '</h1>';
-    echo '<small>Release Date</small>';
+    echo '<small>' . date('Y', strtotime($row->release_date)) . '</small>';
     echo '</div>';
   }
 
