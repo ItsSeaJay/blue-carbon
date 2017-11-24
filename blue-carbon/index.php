@@ -43,7 +43,6 @@
       <div class="container">
         <!-- Portfolio -->
         <h1 id="portfolio">Portfolio</h1>
-        <p> <input type="text" name="" value=""> </p>
         <section class="row">
           <?php include 'views/portfolio.php'; ?>
         </section>

@@ -1,5 +1,10 @@
 .thumbnail
 {
-  color: #FFFFFF;
-  background-color: #000000;
+  
+}
+
+.thumbnail > img
+{
+  width: 100%;
+  height: auto;
 }
