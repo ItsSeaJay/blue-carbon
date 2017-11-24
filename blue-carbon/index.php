@@ -6,6 +6,7 @@
     <title>Project: Blue Carbon</title>
     <link rel="stylesheet" href="styles/bootstrap-grid.min.css">
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/header.css">
     <link rel="stylesheet" href="styles/navigation.css">
     <link rel="stylesheet" href="styles/footer.css">
     <link rel="stylesheet" href="styles/fonts.css">
@@ -13,7 +14,8 @@
   <body>
     <header class="header">
       <div>
-        <h1>Project: Blue Carbon</h1>
+        <h1 class="text-center">Project: Blue Carbon</h1>
+        <h2 class="text-center">Subtitle</h2>
       </div>
     </header>
     <nav class="navigation">
@@ -22,21 +24,32 @@
           <a href="#">Home</a>
         </li>
         <li>
-          <a href="#">About</a>
+          <a href="#portfolio">Portfolio</a>
+        </li>
+        <li>
+          <a href="#about">About</a>
+        </li>
+        <li>
+          <a href="#contact">Contact</a>
         </li>
       </ul>
     </nav>
-    <div class="content">
+    <div class="content containter-fluid">
       <div class="container">
         <!-- Portfolio -->
-        <h1 class="text-center">Portfolio</h1>
+        <h1 id="portfolio">Portfolio</h1>
         <section class="row">
-          <p>
-            <input type="text" name="" value="">
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-          </p>
+          <?php include 'views/portfolio.php'; ?>
+        </section>
+        <!-- About -->
+        <h1 id="about">About</h1>
+        <section class="row">
+          <?php include 'views/about.php'; ?>
+        </section>
+        <!-- Contact -->
+        <h1 id="contact">Contact</h1>
+        <section class="row">
+          <?php include 'views/contact.php'; ?>
         </section>
       </div>
     </div>

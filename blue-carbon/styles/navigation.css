@@ -6,13 +6,15 @@ nav.navigation
 
 nav.navigation > ul
 {
-  height: 100%;
+  margin: 0;
+  padding: 0;
   list-style: none;
 }
 
 nav.navigation > ul > li
 {
   float: left;
+  display: inline;
 }
 
 nav.navigation > ul > li:first-child
@@ -24,4 +26,14 @@ nav.navigation > ul > li > a
 {
   color: #FFFFFF;
   text-decoration: none;
+  display: block;
+  padding: 16px;
+  transition: background-color 0.66s ease-in-out;
+}
+
+nav.navigation > ul > li > a:hover
+{
+  background-color: #111111;
+  text-decoration: underline;
+  transition: background-color 0.128s ease-in-out;
 }
