@@ -1,0 +1,27 @@
+nav.navigation
+{
+  width: 100%;
+  background-color: #3A3A3A;
+}
+
+nav.navigation > ul
+{
+  height: 100%;
+  list-style: none;
+}
+
+nav.navigation > ul > li
+{
+  float: left;
+}
+
+nav.navigation > ul > li:first-child
+{
+  border-left: none;
+}
+
+nav.navigation > ul > li > a
+{
+  color: #FFFFFF;
+  text-decoration: none;
+}

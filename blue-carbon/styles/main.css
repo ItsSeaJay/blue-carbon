@@ -1,31 +1,18 @@
-body,
-html
+html,
+body
 {
-  background-color: #FAFAFA;
   height: 100%;
   margin: 0;
+  background-color: #FAFAFA;
 }
 
-header
+.container
 {
-  background-color: #FF0000;
-}
-
-footer
-{
-  background-color: #00FF00;
-  height: 64px;
-  margin-top: -50px;
-}
-
-#content
-{
-  padding: 100%;
+  padding: 32px;
   background-color: #FFFFFF;
 }
 
-.page-wrapper
+.text-center
 {
-  min-height: 100%;
-  background-color: #666666;
+  text-align: center;
 }

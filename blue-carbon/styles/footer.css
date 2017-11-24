@@ -1,0 +1,17 @@
+body
+{
+  display: flex;
+  flex-direction: column;
+}
+
+footer.footer
+{
+  color: white;
+  background-color: #3A3A3A;
+  padding: 16px;
+}
+
+.content
+{
+  flex: 1 0 auto;
+}
