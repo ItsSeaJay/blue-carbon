@@ -1,11 +1,41 @@
 <?php
   require_once '../red-iron/database.php';
+  require_once '../entities/project.php';
 
   class Project_Model
   {
-    public function getProjects($value='')
+    function __construct()
     {
-      # code...
+
+    }
+
+    public function getProjects()
+    {
+      $query = 'SELECT * FROM projects';
+      $statement = $database->prepared_statement($query, array());
+
+      $projects = array();
+
+      while ($row = $statement->fetchObject())
+      {
+        array_push
+        (
+          $projects,
+          $row->id => new Project
+          (
+            $row->id,
+            $row->title,
+            $row->category,
+            $row->description,
+            $row->release_date,
+            $row->thumbnail
+          )
+        );
+      }
+
+      array_dump($projects);
+
+      return $projects;
     }
   }
 ?>
