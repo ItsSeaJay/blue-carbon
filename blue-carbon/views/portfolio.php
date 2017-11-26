@@ -7,8 +7,10 @@
   while ($row = $statement->fetchObject())
   {
     echo '<div class="col-lg-4 thumbnail text-center">';
+    echo '<a href="project.php">';
     echo '<img src="' . $row->thumbnail . '" alt="'. $row->title . '">';
     echo '<h1>' . $row->title . '</h1>';
+    echo '</a>';
     echo '</div>';
   }
 
