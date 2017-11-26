@@ -1,12 +1,12 @@
 <?php
   class Project
   {
-    public $id;
-    public $title;
-    public $category;
-    public $description;
-    public $release_date;
-    public $thumbnail;
+    private $id;
+    private $title;
+    private $category;
+    private $description;
+    private $release_date;
+    private $thumbnail;
 
     function __construct($id, $title, $category, $description, $release_date, $thumbnail)
     {
@@ -16,6 +16,36 @@
       $this->description = $description;
       $this->release_date = $release_date;
       $this->thumbnail = $thumbnail;
+    }
+
+    public function get_id()
+    {
+      return $this->id;
+    }
+
+    public function get_title()
+    {
+      return $this->title;
+    }
+
+    public function get_category()
+    {
+      return $this->category;
+    }
+
+    public function get_description()
+    {
+
+    }
+
+    public function get_release_date()
+    {
+
+    }
+
+    public function get_thumbnail()
+    {
+
     }
   }
 

@@ -4,11 +4,18 @@
 
   class Project_Controller
   {
-    public $project_model;
+    private $model;
 
     function __construct()
     {
       $this->model = new Project_Model();
+      $this->invoke();
+    }
+
+    private function invoke()
+    {
+      $projects = $model->getProjects();
+      include '../views/portfolio.php';
     }
   }
 

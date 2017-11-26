@@ -44,7 +44,7 @@
         <!-- Portfolio -->
         <h1 id="portfolio">Portfolio</h1>
         <section class="row">
-          <?php include 'views/portfolio.php'; ?>
+          <?php include 'controllers/project.php'; ?>
         </section>
         <!-- About -->
         <h1 id="about">About</h1>

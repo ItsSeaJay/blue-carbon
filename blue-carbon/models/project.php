@@ -4,10 +4,7 @@
 
   class Project_Model
   {
-    function __construct()
-    {
-
-    }
+    function __construct() {}
 
     public function getProjects()
     {
@@ -33,7 +30,7 @@
         );
       }
 
-      array_dump($projects);
+      print_r($projects);
 
       return $projects;
     }
