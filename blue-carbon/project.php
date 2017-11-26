@@ -1,5 +1,5 @@
 <?php
-
+  require_once 'red-iron/database.php';
 ?>
 
 <!DOCTYPE html>
@@ -9,6 +9,6 @@
     <title></title>
   </head>
   <body>
-
+    
   </body>
 </html>
