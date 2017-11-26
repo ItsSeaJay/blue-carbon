@@ -1,15 +1,14 @@
 <?php
 
-  $query = 'SELECT * FROM projects WHERE name LIKE ?';
+  $query = 'SELECT * FROM projects WHERE title LIKE ?';
   $searchTerm = '';
   $statement = $database->prepared_statement($query, array('%'. $searchTerm .'%'));
 
   while ($row = $statement->fetchObject())
   {
     echo '<div class="col-lg-4 thumbnail text-center">';
-    echo '<img src="http://via.placeholder.com/640x480" alt="Lorem Pixel">';
-    echo '<h1>' . $row->name . '</h1>';
-    echo '<small>' . date('Y', strtotime($row->release_date)) . '</small>';
+    echo '<img src="' . $row->thumbnail . '" alt="'. $row->title . '">';
+    echo '<h1>' . $row->title . '</h1>';
     echo '</div>';
   }
 
