@@ -1,6 +1,6 @@
 <?php
-  require_once '../red-iron/database.php';
-  require_once '../entities/project.php';
+  require_once 'red-iron/database.php';
+  require_once 'entities/project.php';
 
   class Project_Model
   {
@@ -18,7 +18,7 @@
         array_push
         (
           $projects,
-          $row->id => new Project
+          new Project
           (
             $row->id,
             $row->title,
