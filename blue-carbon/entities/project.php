@@ -35,17 +35,17 @@
 
     public function get_description()
     {
-
+      return $this->description;
     }
 
     public function get_release_date()
     {
-
+      return $this->description;
     }
 
     public function get_thumbnail()
     {
-
+      return $this->thumbnail;
     }
   }
 
