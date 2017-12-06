@@ -4,7 +4,10 @@
    */
   class Model
   {
-    
+    public function __construct()
+    {
+      echo "string";
+    }
   }
 
 ?>

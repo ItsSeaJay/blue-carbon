@@ -6,7 +6,9 @@
   </head>
   <body>
     <?php
-      
+      require_once 'models/Project_Model.php';
+
+      $model = new Project_Model();
     ?>
   </body>
 </html>
