@@ -7,7 +7,7 @@
   {
     function __construct()
     {
-      # code...
+      
     }
   }
 
