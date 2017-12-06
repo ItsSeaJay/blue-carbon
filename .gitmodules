@@ -1,0 +1,3 @@
+[submodule "libraries/red-iron"]
+	path = libraries/red-iron
+	url = https://github.com/ItsSeaJay/red-iron.git
