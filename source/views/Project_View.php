@@ -16,7 +16,7 @@
     public function output($title)
     {
       $project = $this->model->getProject($title);
-      require_once $this->model->template;
+      require_once $this->model->getTemplate();
     }
   }
 
