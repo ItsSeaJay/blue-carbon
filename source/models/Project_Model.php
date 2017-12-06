@@ -15,7 +15,7 @@
 
     public function getProject($id)
     {
-      $query = "SELECT * FROM projects WHERE `id` = ?";
+      $query = "SELECT * FROM projects WHERE `title` = ?";
       $statement = $GLOBALS['database']->prepared_statement($query, array($id));
 
       return $statement->fetchObject();

@@ -13,9 +13,9 @@
       $this->model = $model;
     }
 
-    public function output($id)
+    public function output($title)
     {
-      $project = $this->model->getProject($id);
+      $project = $this->model->getProject($title);
       require_once $this->model->template;
     }
   }
