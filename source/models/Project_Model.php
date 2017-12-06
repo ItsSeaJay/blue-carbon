@@ -6,23 +6,19 @@
    */
   class Project_Model
   {
-    public function __construct() {
+    public $template;
 
+    public function __construct()
+    {
+      $this->template = 'templates/project.php';
     }
 
     public function getProject($id)
     {
-      $query = "SELECT * FROM projects WHERE id = ?";
-      $statement = $database->prepared_statement($query, array($id));
+      $query = "SELECT * FROM projects WHERE `id` = ?";
+      $statement = $GLOBALS['database']->prepared_statement($query, array($id));
 
       return $statement->fetchObject();
     }
-  }
-
-  $query = 'SELECT * FROM `projects`';
-  $statement = $database->prepared_statement($query, array());
-
-  while ($row = $statement->fetchObject()) {
-    echo $row->id;
   }
 ?>
