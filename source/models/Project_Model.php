@@ -25,5 +25,13 @@
 
       return $statement->fetchObject();
     }
+
+    public function get_all_projects()
+    {
+      $query = "SELECT * FROM projects";
+      $statement = $GLOBALS['database']->prepared_statement($query, array($title));
+
+      return $statement->fetchObject();
+    }
   }
 ?>

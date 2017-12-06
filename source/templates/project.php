@@ -22,5 +22,22 @@
         <strong>Release Date:&nbsp;</strong> <?php echo $formatted_date; ?>
       </li>
     </ul>
+
+    <footer>
+      <small>
+        <?php
+          $query = "SELECT * FROM profile";
+          $statement = $GLOBALS['database']->prepared_statement($query, array());
+
+          $profile = $statement->fetchObject();
+
+          $full_name = $profile->first_name . ' ' . $profile->last_name;
+
+          $copyright = 'Copyright &copy; ' . $full_name;
+
+          echo $copyright;
+        ?>
+      </small>
+    </footer>
   </body>
 </html>
