@@ -11,9 +11,14 @@
         $this->template = $template;
     }
 
-    public function getTemplate()
+    public function get_template()
     {
       return $this->template;
+    }
+
+    public function get_first_name($value='')
+    {
+      # code...
     }
   }
 

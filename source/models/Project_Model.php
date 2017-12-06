@@ -13,12 +13,12 @@
       $this->template = $template;
     }
 
-    public function getTemplate()
+    public function get_template()
     {
       return $this->template;
     }
 
-    public function getProject($title)
+    public function get_project($title)
     {
       $query = "SELECT * FROM projects WHERE `title` = ?";
       $statement = $GLOBALS['database']->prepared_statement($query, array($title));
