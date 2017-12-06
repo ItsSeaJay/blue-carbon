@@ -16,9 +16,32 @@
       return $this->template;
     }
 
-    public function get_first_name($value='')
+    public function get_first_name()
     {
-      # code...
+      $query = "SELECT first_name FROM profile";
+      $statement = $GLOBALS['database'];
+
+      return $statement->fetchObject();
+    }
+
+    public function get_last_name()
+    {
+      $query = "SELECT last_name FROM profile";
+      $statement = $GLOBALS['database'];
+
+      return $statement->fetchObject();
+    }
+
+    public function get_full_name()
+    {
+      $query = "SELECT * FROM profile";
+      $statement = $GLOBALS['database'];
+
+      $profile = $statement->fetchObject();
+
+      $full_name = $profile->first_name . ' ' . $profile->last_name;
+
+      return $full_name;
     }
   }
 

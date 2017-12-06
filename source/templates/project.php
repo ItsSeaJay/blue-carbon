@@ -5,7 +5,12 @@
     <title><?php echo $project->title; ?></title>
   </head>
   <body>
+    <!-- Title -->
     <h1><?php echo $project->title; ?></h1>
+    <!-- Thumbnail -->
+    <img src=<?php echo '"' . $project->thumbnail . '"'; ?> alt=<?php echo '"' . $project->title . ' Thumbnail"'; ?>>
+
+    <!-- Details -->
     <p><?php echo $project->description; ?></p>
     <?php
       // Reformat date from view
