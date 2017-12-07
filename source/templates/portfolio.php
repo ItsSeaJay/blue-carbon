@@ -1,3 +1,13 @@
+<?php
+  require_once 'models/Profile_Model.php';
+
+  $profile_model = new Profile_Model('templates/project.php');
+  $full_name = $profile_model->get_full_name();
+  $year = date("Y");
+
+  $copyright = 'Copyright &copy; ' . $full_name . '&nbsp;' . $year;
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -8,6 +18,12 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
   </head>
   <body>
+    <header class="jumbotron">
+      <h1>
+        <a href="index.php"><?php echo $full_name ?></a>
+      </h1>
+    </header>
+
     <div class="container">
       <!-- Thumbnails -->
       <?php
@@ -40,20 +56,8 @@
         }
       ?>
     </div>
-    <footer>
-      <small>
-        <?php
-        require_once 'models/Profile_Model.php';
-
-        $profile_model = new Profile_Model('templates/project.php');
-        $full_name = $profile_model->get_full_name();
-        $year = date("Y");
-
-        $copyright = 'Copyright &copy; ' . $full_name . '&nbsp;' . $year;
-
-        echo $copyright;
-      ?>
-      </small>
+    <footer class="jumbotron">
+      <small><?php echo $copyright; ?></small>
     </footer>
   </body>
 </html>
