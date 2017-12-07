@@ -35,7 +35,7 @@
     public function get_full_name()
     {
       $query = "SELECT * FROM profile";
-      $statement = $GLOBALS['database'];
+      $statement = $GLOBALS['database']->prepared_statement($query, array());
 
       $profile = $statement->fetchObject();
 

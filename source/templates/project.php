@@ -2,11 +2,14 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?php echo $project->title; ?></title>
   </head>
   <body>
     <!-- Title -->
     <h1><?php echo $project->title; ?></h1>
+    <!-- Subtitle -->
+    <h2><?php echo $project->subtitle; ?></h2>
     <!-- Thumbnail -->
     <img src=<?php echo '"' . $project->thumbnail . '"'; ?> alt=<?php echo '"' . $project->title . ' Thumbnail"'; ?>>
 
@@ -24,16 +27,16 @@
     </ul>
 
     <footer>
+      <!-- Copyright Notice -->
       <small>
         <?php
-          $query = "SELECT * FROM profile";
-          $statement = $GLOBALS['database']->prepared_statement($query, array());
+          require_once 'models/Profile_Model.php';
 
-          $profile = $statement->fetchObject();
+          $profile_model = new Profile_Model('templates/project.php');
+          $full_name = $profile_model->get_full_name();
+          $year = date("Y");
 
-          $full_name = $profile->first_name . ' ' . $profile->last_name;
-
-          $copyright = 'Copyright &copy; ' . $full_name;
+          $copyright = 'Copyright &copy; ' . $full_name . '&nbsp;' . $year;
 
           echo $copyright;
         ?>

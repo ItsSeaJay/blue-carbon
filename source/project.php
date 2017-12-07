@@ -7,5 +7,5 @@
   $controller = 'test';
   $view = new Project_View($model, $controller);
 
-  $view->output("Super Mario: Odyssey");
+  $view->output_single($_GET['title']);
 ?>

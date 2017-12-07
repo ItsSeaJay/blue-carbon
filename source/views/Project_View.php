@@ -13,9 +13,17 @@
       $this->model = $model;
     }
 
-    public function output($title)
+    public function output_single($title)
     {
-      $project = $this->model->get_project($title);
+      $project = $this->model->get_single_project($title);
+
+      require_once $this->model->get_template();
+    }
+
+    public function output_all()
+    {
+      $projects = $this->model->get_all_projects();
+
       require_once $this->model->get_template();
     }
   }
