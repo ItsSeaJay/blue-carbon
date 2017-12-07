@@ -40,5 +40,20 @@
         }
       ?>
     </div>
+    <footer>
+      <small>
+        <?php
+        require_once 'models/Profile_Model.php';
+
+        $profile_model = new Profile_Model('templates/project.php');
+        $full_name = $profile_model->get_full_name();
+        $year = date("Y");
+
+        $copyright = 'Copyright &copy; ' . $full_name . '&nbsp;' . $year;
+
+        echo $copyright;
+      ?>
+      </small>
+    </footer>
   </body>
 </html>

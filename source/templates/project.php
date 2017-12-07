@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?php echo $project->title; ?></title>
+    <!-- Styles -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
   </head>
   <body>
     <!-- Title -->
@@ -13,18 +15,8 @@
     <!-- Thumbnail -->
     <img src=<?php echo '"' . $project->thumbnail . '"'; ?> alt=<?php echo '"' . $project->title . ' Thumbnail"'; ?>>
 
-    <!-- Details -->
+    <!-- Description -->
     <p><?php echo $project->description; ?></p>
-    <?php
-      // Reformat date from view
-      $date = DateTime::createFromFormat('Y-m-d', $project->release_date);
-      $formatted_date = $date->format('F j, Y');
-    ?>
-    <ul>
-      <li>
-        <strong>Release Date:&nbsp;</strong> <?php echo $formatted_date; ?>
-      </li>
-    </ul>
 
     <footer>
       <!-- Copyright Notice -->
