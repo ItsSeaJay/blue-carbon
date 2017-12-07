@@ -7,19 +7,21 @@
     <link rel="stylesheet" href="styles/main.css">
   </head>
   <body>
-    <!-- Thumbnails -->
-    <?php
-      // Echo project thumbnails
-      foreach ($projects as $project)
-      {
-        echo '<div class="thumbnail">' . "\n";
-        echo '<a href="project.php?title=' . $project['title'] . '">' . "\n";
-        echo '<img src="' . $project['thumbnail'] . '">' . "\n";
-        echo '<h1>' . $project['title'] . '</h1>' . "\n";
-        echo '<p>' . $project['subtitle'] . '</p>' . "\n";
-        echo '</a>' . "\n";
-        echo '</div>' . "\n";
-      }
-    ?>
+    <div class="container">
+      <!-- Thumbnails -->
+      <?php
+        // Echo project thumbnails
+        foreach ($projects as $project)
+        {
+          echo '<div class="thumbnail">';
+          echo '<a href="project.php?title=' . urlencode($project['title']) . '">';
+          echo '<img src="' . $project['thumbnail'] . '">';
+          echo '<h1>' . $project['title'] . '</h1>';
+          echo '<p>' . $project['subtitle'] . '</p>';
+          echo '</a>';
+          echo '</div>';
+        }
+      ?>
+    </div>
   </body>
 </html>
