@@ -13,17 +13,25 @@
       $this->template = $template;
     }
 
-    public function getTemplate()
+    public function get_template()
     {
       return $this->template;
     }
 
-    public function getProject($title)
+    public function get_single_project($title)
     {
       $query = "SELECT * FROM projects WHERE `title` = ?";
       $statement = $GLOBALS['database']->prepared_statement($query, array($title));
 
       return $statement->fetchObject();
+    }
+
+    public function get_all_projects()
+    {
+      $query = "SELECT * FROM projects";
+      $statement = $GLOBALS['database']->prepared_statement($query, array());
+
+      return $statement->fetchAll();
     }
   }
 ?>
