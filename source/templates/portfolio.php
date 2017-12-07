@@ -5,21 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Blue Carbon</title>
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
   </head>
   <body>
     <div class="container">
       <!-- Thumbnails -->
       <?php
         // Echo project thumbnails
+        $project_count = 0;
+        $projects_per_row = 3;
+
         foreach ($projects as $project)
         {
-          echo '<div class="thumbnail">';
+          // Insert rows based on the number of projects
+          if ($project_count % $projects_per_row == 0)
+          {
+            // If this isn't the first time we're inserting a row
+            if ($project_count != 0)
+            {
+              echo '</div>';
+            }
+            echo '<div class="row">';
+          }
+
+          echo '<div class="thumbnail col-md-4">';
           echo '<a href="project.php?title=' . urlencode($project['title']) . '">';
-          echo '<img src="' . $project['thumbnail'] . '">';
+          echo '<img class="responsive" src="' . $project['thumbnail'] . '">';
           echo '<h1>' . $project['title'] . '</h1>';
           echo '<p>' . $project['subtitle'] . '</p>';
           echo '</a>';
           echo '</div>';
+
+          $project_count++;
         }
       ?>
     </div>
