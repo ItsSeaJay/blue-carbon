@@ -15,7 +15,7 @@
       <h1 class="text-center">Login</h1>
 
       <!-- Login Form -->
-      <form id="login-form">
+      <form id="login-form" method="post">
         <!-- Username -->
         <label for="username">
           <h2>Username</h2>
