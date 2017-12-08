@@ -1,5 +1,7 @@
 <?php
-  // Temporary redirect to test project page
-  header('Location: index.php');
-  exit();
+  function redirect($path)
+  {
+    header('Location: ' . $path);
+    exit();
+  }
 ?>
