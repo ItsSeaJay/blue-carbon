@@ -10,11 +10,15 @@
   <body>
     <div class="container">
       <h1 class="text-center">Login</h1>
-      <form method="post">
-        <h2>Username</h2>
-        <input class="responsive" type="text" name="username" value="" placeholder="Username">
-        <h2>Password</h2>
-        <input class="responsive" type="password" name="username" value="" placeholder="Password">
+      <form class="vertical-form" method="post">
+        <label for="username">
+          <h2>Username</h2>
+        </label>
+        <input class="" type="text" name="username" value="" placeholder="Username">
+        <label for="password">
+          <h2>Password</h2>
+        </label>
+        <input class="" type="password" name="username" value="" placeholder="Password">
         <br>
         <button type="button" name="login">Login</button>
       </form>
