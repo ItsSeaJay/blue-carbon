@@ -15,7 +15,7 @@
       <h1 class="text-center">Login</h1>
 
       <!-- Login Form -->
-      <form id="login-form" action="index.php">
+      <form id="login-form">
         <!-- Username -->
         <label for="username">
           <h2>Username</h2>
@@ -27,7 +27,7 @@
         </label>
         <input class="form-control" type="password" name="password" value="" placeholder="Password">
         <hr>
-        <button class="btn btn-default" type="submit" name="login">Login</button>
+        <button class="btn btn-default" type="submit" name="login" value="submit">Login</button>
       </form>
 
       <p id="result"></p>

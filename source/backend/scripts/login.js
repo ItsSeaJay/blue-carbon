@@ -1,9 +1,9 @@
 $(document).ready(function () {
-  // Attach a submit handler to the form
-  $("#login-form").submit(function(event) {
-    // Stop form from submitting normally
+  $('#login-form').submit(function (event) {
     event.preventDefault();
 
-    console.log($(this).serialise());
+    $.post("login.php", $('#login-form').serialize(), function (data) {
+      $('#result').html(data);
+    });
   });
 });
