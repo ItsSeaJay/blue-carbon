@@ -1,7 +1,7 @@
 <?php
-  require_once 'models/Profile_Model.php';
+  require_once 'frontend/models/Profile_Model.php';
 
-  $profile_model = new Profile_Model('templates/project.php');
+  $profile_model = new Profile_Model('frontend/templates/project.php');
   $full_name = $profile_model->get_full_name();
   $year = date("Y");
 
