@@ -10,7 +10,7 @@
   <body>
     <div class="container">
       <h1 class="text-center">Login</h1>
-      <form class="vertical-form" method="post">
+      <form class="vertical-form" method="post" action="login.php">
         <label for="username">
           <h2>Username</h2>
         </label>
@@ -20,7 +20,7 @@
         </label>
         <input class="" type="password" name="username" value="" placeholder="Password">
         <br>
-        <button type="button" name="login">Login</button>
+        <button class="btn-default" type="submit" name="login">Login</button>
       </form>
     </div>
   </body>
