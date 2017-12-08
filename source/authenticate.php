@@ -3,7 +3,7 @@
 
   if (isset($_SESSION['authenticated']))
   {
-    if ($_SESSION['authenticated'] == false)
+    if (!$_SESSION['authenticated'])
     {
       redirect('index.php');
     }
