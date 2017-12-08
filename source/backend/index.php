@@ -26,10 +26,8 @@
           <h2>Password</h2>
         </label>
         <input class="form-control" type="password" name="password" value="" placeholder="Password">
-
         <hr>
-
-        <button id="login" class="btn btn-default" type="submit" name="login">Login</button>
+        <button class="btn btn-default" type="submit" name="login">Login</button>
       </form>
 
       <p id="result"></p>
