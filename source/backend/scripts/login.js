@@ -50,13 +50,8 @@ function attemptLogin(form) {
   });
 
   request.done(function (response, textStatus, jqXHR) {
-      console.log("Blue Carbon login request done!");
-      console.log(response);
-      if (response['success'] == true) {
-        return true;
-      } else {
-        return false;
-      }
+    console.log(response);
+    console.log(response.message);
   });
 
   request.fail(function (jqXHR, textStatus, errorThrown) {
@@ -69,6 +64,8 @@ function attemptLogin(form) {
   request.always(function () {
       inputs.prop("disabled", false);
   });
+
+  return false;
 }
 
 function showError(message) {
