@@ -4,10 +4,20 @@
    */
   class User_View
   {
-    function __construct(argument)
+    private $model;
+    private $controller;
+
+    function __construct($model, $controller)
     {
-      # code...
+      $this->model = $model;
+      $this->controller = $controller;
+    }
+
+    public function output_single($username)
+    {
+      $user = $this->model->get_user($username);
+
+      require_once $this->model->get_template();
     }
   }
-
 ?>

@@ -1,5 +1,5 @@
 <?php
-  require_once '../../../libraries/red-iron/red-iron/database.php';
+  require_once '../../libraries/red-iron/red-iron/database.php';
 
   /**
    * User_Model retrieves data for an individual user
@@ -15,7 +15,7 @@
 
     public function get_template()
     {
-      return $template;
+      return $this->template;
     }
 
     public function get_user($username)
