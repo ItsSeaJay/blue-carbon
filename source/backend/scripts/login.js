@@ -19,7 +19,7 @@ $(document).ready(function () {
     if (username.length > 0) {
       if (password.length > 0) {
         if (attemptLogin(form)) {
-
+          alert('login');
         } else {
           showError('<p><strong>Error:&nbsp;</strong>login attempt failed.</p>');
         }
@@ -49,15 +49,17 @@ function attemptLogin(form) {
       data: serializedData
   });
 
-  request.done(function (response, textStatus, jqXHR){
+  request.done(function (response, textStatus, jqXHR) {
       console.log("Blue Carbon login request done!");
-
-      if (response == 'success') {
+      console.log(response);
+      if (response['success'] == true) {
         return true;
+      } else {
+        return false;
       }
   });
 
-  request.fail(function (jqXHR, textStatus, errorThrown){
+  request.fail(function (jqXHR, textStatus, errorThrown) {
       console.error(
           "The following error occurred: "+
           textStatus, errorThrown
@@ -67,13 +69,8 @@ function attemptLogin(form) {
   request.always(function () {
       inputs.prop("disabled", false);
   });
-
-  // If nothing else works, the login request failed
-  return false;
 }
 
 function showError(message) {
   $('#login-form').effect('shake');
-  $('#login-error').show();
-  $('#login-error').html(message);
 }

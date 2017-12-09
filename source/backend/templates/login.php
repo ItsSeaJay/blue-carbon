@@ -37,9 +37,6 @@
         <button class="btn btn-default" type="submit" name="login">Login</button>
       </form>
 
-      <!-- List of Errors -->
-      <div id="login-error" class="alert alert-danger fade in"></div>
-
       <p id="result"></p>
     </div>
   </body>
