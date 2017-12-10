@@ -66,6 +66,14 @@ $(document).ready(function () {
     var username = $('#username').val();
     var password = $('#password').val();
 
+    if (username.length == 0) {
+
+    }
+
+    if (username.length == 0) {
+
+    }
+
     if (username.length > 0 && password.length > 0) {
       login.request(form);
     }

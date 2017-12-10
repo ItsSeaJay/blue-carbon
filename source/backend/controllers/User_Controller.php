@@ -18,16 +18,16 @@
 
     public function login()
     {
+      $response = array(
+        'success' => false,
+        'message' => 'Error: no values were posted'
+      );
       if (isset($_POST))
       {
         if (isset($_POST['username']) && isset($_POST['password']))
         {
           $username = filter_var($_POST['username'], FILTER_SANITIZE_STRING) ?? '';
           $password = filter_var($_POST['password'], FILTER_SANITIZE_STRING) ?? '';
-          $response = array(
-            'success' => false,
-            'message' => 'Error: undefined'
-          );
 
           if ($username != '' && $password != '')
           {
@@ -44,14 +44,9 @@
               $response['message'] = 'Error: Login attempt failed';
             }
           }
-          else
-          {
-            $response['success'] = false;
-            $response['message'] = 'Error: Credentials are undefined';
-          }
         }
-        echo json_encode($response);
       }
+      echo json_encode($response);
     }
   }
 
