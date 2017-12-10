@@ -1,6 +1,7 @@
 <?php
-  require_once '../include_only.php';
   require_once '../../libraries/red-iron/red-iron/database.php';
+
+  if(count(get_included_files()) == 1) exit("Direct access not permitted.");
 
   if (isset($_POST))
   {

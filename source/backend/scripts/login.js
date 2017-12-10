@@ -23,7 +23,7 @@ var login = {
       console.log(response);
 
       if (response.success) {
-        window.location.href = 'dashboard.php';
+        window.location.replace('dashboard.php');
       } else {
         login.error();
       }
