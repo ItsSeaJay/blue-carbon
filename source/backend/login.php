@@ -1,32 +1,41 @@
 <?php
   require_once '../../libraries/red-iron/red-iron/database.php';
+  require_once 'models/User_Model.php';
+  require_once 'views/User_View.php';
 
-  if(count(get_included_files()) == 1) exit("Direct access not permitted.");
+  $user_template = 'templates/login_form.php';
+  $user_model = new User_Model($user_template);
 
   if (isset($_POST))
   {
-    $username = filter_var($_POST['username'], FILTER_SANITIZE_STRING) ?? '';
-    $password = filter_var($_POST['password'], FILTER_SANITIZE_STRING) ?? '';
-    $response = array(
-      'success' => false,
-      'message' => 'Error: undefined'
-    );
-    $query = 'SELECT * FROM `users` WHERE `username` = ?';
-
-    // This if statement sets the $statement variable if true
-    if ($statement = $GLOBALS['database']->prepared_statement($query, array($username)))
+    if (isset($_POST['username']) && isset($_POST['password']))
     {
-      $user = $statement->fetchObject();
+      $username = filter_var($_POST['username'], FILTER_SANITIZE_STRING) ?? '';
+      $password = filter_var($_POST['password'], FILTER_SANITIZE_STRING) ?? '';
+      $response = array(
+        'success' => false,
+        'message' => 'Error: undefined'
+      );
 
-      if ($username === $user->username && password_verify($password, $user->password))
+      if ($username != '' && $password != '')
       {
-        $response['success'] = true;
-        $response['message'] = 'Successfully authenticated';
+        $user = $user_model->get_user($username);
+
+        if ($username === $user->username && password_verify($password, $user->password))
+        {
+          $response['success'] = true;
+          $response['message'] = 'Alert: Successfully authenticated';
+        }
+        else
+        {
+          $response['success'] = false;
+          $response['message'] = 'Error: Login attempt failed';
+        }
       }
       else
       {
         $response['success'] = false;
-        $response['message'] = 'Error: Login attempt failed';
+        $response['message'] = 'Error: Credentials are undefined';
       }
     }
 
