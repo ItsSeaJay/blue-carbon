@@ -1,4 +1,5 @@
 <?php
+  require_once '../include_only.php';
   require_once '../../libraries/red-iron/red-iron/database.php';
 
   if (isset($_POST))
