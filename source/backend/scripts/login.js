@@ -48,6 +48,10 @@ var login = {
 $(document).ready(function () {
   $('#login-error').hide();
 
+  if (location.protocol != 'https:') {
+    // TODO: Add a message to encourage users to use a secure connection
+  }
+
   $('#login-form').submit(function (event) {
     event.preventDefault();
 
