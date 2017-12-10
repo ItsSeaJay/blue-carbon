@@ -31,12 +31,18 @@
 
           if ($username != '' && $password != '')
           {
-            $user = $this->model->get_user($username);
-
-            if ($username === $user->username && password_verify($password, $user->password))
+            if ($user = $this->model->get_user($username))
             {
-              $response['success'] = true;
-              $response['message'] = 'Alert: Successfully authenticated';
+              if (password_verify($password, $user->password))
+              {
+                $response['success'] = true;
+                $response['message'] = 'Alert: Successfully authenticated';
+              }
+              else
+              {
+                $response['success'] = false;
+                $response['message'] = 'Error: Invalid credentials';
+              }
             }
             else
             {
