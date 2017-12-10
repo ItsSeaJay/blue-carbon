@@ -50,6 +50,7 @@ $(document).ready(function () {
 
   if (location.protocol != 'https:') {
     // TODO: Add a message to encourage users to use a secure connection
+    console.warn('Connection is not secure.');
   }
 
   $('#login-form').submit(function (event) {

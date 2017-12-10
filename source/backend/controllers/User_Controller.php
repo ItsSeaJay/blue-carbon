@@ -31,7 +31,7 @@
 
           if ($username != '' && $password != '')
           {
-            $user = $user_model->get_user($username);
+            $user = $this->model->get_user($username);
 
             if ($username === $user->username && password_verify($password, $user->password))
             {
@@ -50,7 +50,6 @@
             $response['message'] = 'Error: Credentials are undefined';
           }
         }
-
         echo json_encode($response);
       }
     }
