@@ -21,7 +21,6 @@ var login = {
     request.done(function (response, textStatus, jqXHR) {
       response = JSON.parse(response);
       console.log(response);
-
       if (response.success) {
         window.location.replace('dashboard.php');
       } else {

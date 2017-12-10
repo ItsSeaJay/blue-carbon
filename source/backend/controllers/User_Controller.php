@@ -18,16 +18,16 @@
 
     public function login()
     {
-      $response = array(
-        'success' => false,
-        'message' => 'Error: no values were posted'
-      );
       if (isset($_POST))
       {
         if (isset($_POST['username']) && isset($_POST['password']))
         {
           $username = filter_var($_POST['username'], FILTER_SANITIZE_STRING) ?? '';
           $password = filter_var($_POST['password'], FILTER_SANITIZE_STRING) ?? '';
+          $response = array(
+            'success' => false,
+            'message' => 'Error: no values were posted'
+          );
 
           if ($username != '' && $password != '')
           {
@@ -45,8 +45,8 @@
             }
           }
         }
+        echo json_encode($response);
       }
-      echo json_encode($response);
     }
   }
 
