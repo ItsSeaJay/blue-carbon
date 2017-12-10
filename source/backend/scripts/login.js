@@ -50,8 +50,9 @@ function attemptLogin(form) {
   });
 
   request.done(function (response, textStatus, jqXHR) {
+    response = JSON.parse(response);
     console.log(response);
-    console.log(response.message);
+    console.log(response["message"]);
   });
 
   request.fail(function (jqXHR, textStatus, errorThrown) {
