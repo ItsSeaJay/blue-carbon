@@ -3,13 +3,12 @@
 
   if (isset($_POST))
   {
-    $username = filter_var($_POST['username'], FILTER_SANITIZE_STRING) ?? 'No username posted.';
-    $password = filter_var($_POST['password'], FILTER_SANITIZE_STRING) ?? 'No password posted.';
+    $username = filter_var($_POST['username'], FILTER_SANITIZE_STRING) ?? '';
+    $password = filter_var($_POST['password'], FILTER_SANITIZE_STRING) ?? '';
     $response = array(
       'success' => false,
       'message' => 'Error: undefined'
     );
-
     $query = 'SELECT * FROM `users` WHERE `username` = ?';
 
     // This if statement sets the $statement variable if true

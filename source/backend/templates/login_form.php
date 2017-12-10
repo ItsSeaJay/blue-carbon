@@ -27,12 +27,12 @@
         <label for="username">
           <h2>Username</h2>
         </label>
-        <input id="username" class="form-control" type="text" name="username" value="" placeholder="Username">
+        <input id="username" class="form-control" type="text" name="username" value="" placeholder="Username" required>
         <!-- Password -->
         <label for="password">
           <h2>Password</h2>
         </label>
-        <input id="password" class="form-control" type="password" name="password" value="" placeholder="Password">
+        <input id="password" class="form-control" type="password" name="password" value="" placeholder="Password" required>
         <hr>
         <button class="btn btn-default" type="submit" name="login">Login</button>
       </form>
