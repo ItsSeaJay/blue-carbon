@@ -37,6 +37,10 @@
               {
                 $response['success'] = true;
                 $response['message'] = 'Alert: Successfully authenticated';
+
+                // Configure the PHP session
+                session_start();
+                $_SESSION['login'] = $user->id;
               }
               else
               {
@@ -51,8 +55,16 @@
             }
           }
         }
-        echo json_encode($response);
+        echo json_encode($response) ?? '';
       }
+    }
+
+    public function logout()
+    {
+      session_start();
+      unset($_SESSION['login']);
+      session_destroy();
+      header('Location: index.php');
     }
   }
 
