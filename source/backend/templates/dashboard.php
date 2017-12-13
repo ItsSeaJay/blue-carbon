@@ -12,14 +12,21 @@
     <!-- JQuery UI -->
     <script src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
   </head>
-  <body>
-    <nav>
-      <ul class="nav">
-        <li class="nav-header">
-          <h1>Blue Carbon</h1>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="logout.php">Logout</a>
+  <body style="background-color: #333333;">
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-dark bg-dark">
+      <!-- Brand -->
+      <a class="navbar-brand" href="dashboard.php">Blue Carbon</a>
+      <!-- Left Side -->
+      <ul class="nav navbar-nav navbar-left">
+
+      </ul>
+      <!-- Right Side -->
+      <ul class="nav navbar-nav navbar-right">
+        <li class="navbar-item">
+          <a href="logout.php">
+            Logout
+          </a>
         </li>
       </ul>
     </nav>
