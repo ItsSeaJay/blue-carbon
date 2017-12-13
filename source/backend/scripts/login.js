@@ -24,7 +24,7 @@ var login = {
       if (response.success) {
         window.location.replace('dashboard.php');
       } else {
-        login.error();
+        login.error(response.message);
       }
     });
 
@@ -39,8 +39,12 @@ var login = {
       inputs.prop("disabled", false);
     });
   },
-  error: function () {
+  error: function (message) {
+    var alert = '<div><strong>Error:&nbsp;</strong>' + message + '</div>';
+    var duration = 2048;
+
     $('#login-form').effect('shake');
+    $('#response').html(alert);
   }
 };
 
@@ -64,14 +68,6 @@ $(document).ready(function () {
 
     var username = $('#username').val();
     var password = $('#password').val();
-
-    if (username.length == 0) {
-
-    }
-
-    if (username.length == 0) {
-
-    }
 
     if (username.length > 0 && password.length > 0) {
       login.request(form);

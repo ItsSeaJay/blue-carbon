@@ -45,13 +45,13 @@
               else
               {
                 $response['success'] = false;
-                $response['message'] = 'Error: Invalid credentials';
+                $response['message'] = 'Invalid credentials';
               }
             }
             else
             {
               $response['success'] = false;
-              $response['message'] = 'Error: Login attempt failed';
+              $response['message'] = 'Login attempt failed';
             }
           }
         }
