@@ -13,3 +13,9 @@ img.responsive
   width: 100%;
   height: auto;
 }
+
+.center-vertical
+{
+  display: flex;
+  align-items: center;
+}
