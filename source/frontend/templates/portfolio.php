@@ -45,7 +45,7 @@
           }
 
           // Output single thumbnail
-          echo '<div class="thumbnail card col-md">';
+          echo '<div class="thumbnail col-md">';
           echo '<a href="project.php?title=' . urlencode($project['title']) . '">';
           echo '<img class="responsive" src="' . $project['thumbnail'] . '">';
           echo '<h1>' . $project['title'] . '</h1>';
