@@ -33,6 +33,11 @@
         <ul class="nav navbar-nav navbar-right">
           <li class="navbar-item">
             <a class="nav-link" href="logout.php">
+              Mode
+            </a>
+          </li>
+          <li class="navbar-item">
+            <a class="nav-link" href="logout.php">
               <span class="oi oi-account-logout"></span>&nbsp;Logout
             </a>
           </li>
