@@ -22,7 +22,9 @@
       <!-- Top Navigation Bar -->
       <nav class="navbar navbar-dark bg-dark">
         <!-- Brand -->
-        <a class="navbar-brand" href="dashboard.php">Aquafolio</a>
+        <a class="navbar-brand" href="dashboard.php">
+          <span class="oi oi-droplet"></span>&nbsp;Aquafolio
+        </a>
         <!-- Left Side -->
         <ul class="nav navbar-nav navbar-left">
 
@@ -38,7 +40,7 @@
       </nav>
     </header>
 
-    <div id="wrapper" class="toggled">
+    <div id="wrapper">
       <!-- Sidebar -->
       <div id="sidebar-wrapper">
         <ul class="sidebar-nav">
@@ -46,13 +48,13 @@
             <a href="#">Dashboard</a>
           </li>
           <li>
-            <a href="#">Shortcuts</a>
+            <a href="#">Projects</a>
           </li>
           <li>
-            <a href="#">Overview</a>
+            <a href="#">Profile</a>
           </li>
           <li>
-            <a href="#">Events</a>
+            <a href="#">Administration</a>
           </li>
           <li>
             <a href="#">About</a>
@@ -69,9 +71,15 @@
 
       <!-- Page Content -->
       <div id="page-content-wrapper">
-          <div class="container-fluid">
-            <a href="#menu-toggle" class="btn btn-primary" id="menu-toggle">Toggle Menu</a>
-          </div>
+        <div class="container-fluid">
+          <a href="#menu-toggle" class="btn" id="menu-toggle">
+            <span class="oi oi-menu"></span>
+          </a>
+          <h1>Dashboard</h1>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+        </div>
       </div>
       <!-- /#page-content-wrapper -->
 
