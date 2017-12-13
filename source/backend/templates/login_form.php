@@ -6,6 +6,8 @@
     <!-- Styles -->
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <!-- Open Iconic -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" integrity="sha256-BJ/G+e+y7bQdrYkS2RBTyNfBHpA9IuGaPmf9htub5MQ=" crossorigin="anonymous">
     <!-- Scripts -->
     <!-- JQuery -->
     <script  src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
@@ -21,6 +23,10 @@
   <body>
     <div class="container">
       <h1 class="text-center">Login</h1>
+      <a href="../">
+        <span class="oi oi-arrow-left"></span>
+        Back to frontend
+      </a>
       <!-- Login Form -->
       <form id="login-form" method="post">
         <!-- Username -->
@@ -34,7 +40,9 @@
         </label>
         <input id="password" class="form-control" type="password" name="password" value="" placeholder="Password">
         <hr>
-        <button class="btn btn-default" type="submit" name="login">Login</button>
+        <button class="btn btn-default" type="submit" name="login">
+          <span class="oi oi-account-login"></span>&nbsp;Login
+        </button>
       </form>
 
       <p id="result"></p>
