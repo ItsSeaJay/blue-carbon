@@ -15,37 +15,53 @@
     <script  src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <!-- JQuery UI -->
     <script src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
   </head>
   <body>
     <!-- Header -->
     <header>
-      <!-- Top Navigation Bar -->
-      <nav class="navbar navbar-dark bg-dark">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <!-- Brand -->
         <a class="navbar-brand" href="dashboard.php">
           <span class="oi oi-droplet"></span>&nbsp;Aquafolio
         </a>
-        <!-- Left Side -->
-        <ul class="nav navbar-nav navbar-left">
 
-        </ul>
-        <!-- Right Side -->
-        <ul class="nav navbar-nav navbar-right">
-          <li class="navbar-item">
-            <a class="nav-link" href="logout.php">
-              Mode
-            </a>
-          </li>
-          <li class="navbar-item">
-            <a class="nav-link" href="logout.php">
-              <span class="oi oi-account-logout"></span>&nbsp;Logout
-            </a>
-          </li>
-        </ul>
+        <!-- Expand Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar (Dropdown) -->
+        <div id="navbarNavDropdown" class="navbar-collapse collapse">
+          <!-- Left Side -->
+          <ul class="navbar-nav mr-auto">
+            <!-- TODO: find something to put in this menu -->
+          </ul>
+          <!-- Right Side -->
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <div class="nav-link">
+                <span>Mode</span>
+                <select>
+                  <option>Release</option>
+                  <option>Debug</option>
+                </select>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="logout.php">
+                <span class="oi oi-account-logout"></span>&nbsp;Logout
+              </a>
+            </li>
+          </ul>
+        </div>
       </nav>
     </header>
 
-    <div id="wrapper">
+    <div id="wrapper" class="toggled">
       <!-- Sidebar -->
       <div id="sidebar-wrapper">
         <ul class="sidebar-nav">
@@ -64,12 +80,6 @@
           <li>
             <a href="#">About</a>
           </li>
-          <li>
-            <a href="#">Services</a>
-          </li>
-          <li>
-            <a href="#">Contact</a>
-          </li>
         </ul>
       </div>
       <!-- /#sidebar-wrapper -->
@@ -77,23 +87,24 @@
       <!-- Page Content -->
       <div id="page-content-wrapper">
         <div class="container-fluid">
-          <a href="#menu-toggle" class="btn" id="menu-toggle">
-            <span class="oi oi-menu"></span>
-          </a>
-          <h1>Dashboard</h1>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-          </p>
+          <section class="row">
+            <div class="col-md">
+              <h1>Dashboard</h1>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+            </div>
+          </section>
         </div>
       </div>
       <!-- /#page-content-wrapper -->
 
       <!-- Menu Toggle Script -->
       <script>
-      $("#menu-toggle").click(function(e) {
-          e.preventDefault();
-          $("#wrapper").toggleClass("toggled");
-      });
+        $("#menu-toggle").click(function(event) {
+            event.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+        });
       </script>
     </div>
   </body>
