@@ -24,23 +24,32 @@
     <div class="container">
       <h1 class="text-center">Login</h1>
       <a href="../">
-        <span class="oi oi-arrow-left"></span>
-        Back to frontend
+        <span class="oi oi-arrow-left"></span>&nbsp;Back to frontend
       </a>
       <!-- Login Form -->
       <form id="login-form" method="post">
         <!-- Username -->
-        <label for="username">
-          <h2>Username</h2>
-        </label>
-        <input id="username" class="form-control" type="text" name="username" value="" placeholder="Username">
+        <div class="form-group">
+          <label for="username">
+            <h2>Username</h2>
+          </label>
+          <input id="username" class="form-control form-control-lg" type="text" name="username" value="" placeholder="Username">
+          <div id="username-required" class="invalid-feedback">
+            Please enter your username
+          </div>
+        </div>
         <!-- Password -->
-        <label for="password">
-          <h2>Password</h2>
-        </label>
-        <input id="password" class="form-control" type="password" name="password" value="" placeholder="Password">
+        <div class="form-group">
+          <label for="password">
+            <h2>Password</h2>
+          </label>
+          <input id="password" class="form-control form-control-lg" type="password" name="password" value="" placeholder="Password">
+          <div id="password-required" class="invalid-feedback">
+            Please input a password
+          </div>
+        </div>
         <hr>
-        <button class="btn btn-default" type="submit" name="login">
+        <button class="btn btn-primary" type="submit" name="login">
           <span class="oi oi-account-login"></span>&nbsp;Login
         </button>
       </form>

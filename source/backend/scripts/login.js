@@ -50,6 +50,8 @@ var login = {
 
 $(document).ready(function () {
   $('#login-error').hide();
+  $('#username-required').hide();
+  $('#password-required').hide();
 
   if (location.protocol != 'https:') {
     // TODO: Add a message to encourage users to use a secure connection
@@ -68,6 +70,19 @@ $(document).ready(function () {
 
     var username = $('#username').val();
     var password = $('#password').val();
+
+    // Validate that a username and password has been sent
+    if (username.length == 0) {
+      $('#username-required').slideDown();
+    } else {
+      $('#username-required').fadeOut();
+    }
+
+    if (password.length == 0) {
+      $('#password-required').slideDown();
+    } else {
+      $('#password-required').fadeOut();
+    }
 
     if (username.length > 0 && password.length > 0) {
       login.request(form);
