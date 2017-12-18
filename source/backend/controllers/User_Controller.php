@@ -40,6 +40,7 @@
 
                 // Configure the PHP session
                 session_start();
+
                 $_SESSION['login'] = $user->id;
               }
               else
@@ -61,9 +62,9 @@
 
     public function logout()
     {
-      unset($_SESSION['login']);
+      session_start();
+
       session_destroy();
-      
       header('Location: index.php');
       exit();
     }

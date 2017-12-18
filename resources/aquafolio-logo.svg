@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="297mm"
+   height="210mm"
+   viewBox="0 0 297 210"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.0 r15299"
+   sodipodi:docname="aquafolio-logo.svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1"
+     inkscape:cx="497.81494"
+     inkscape:cy="359.921"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer2"
+     showgrid="false"
+     inkscape:window-width="1858"
+     inkscape:window-height="1057"
+     inkscape:window-x="1912"
+     inkscape:window-y="542"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Text"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-87)">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:133.79380798px;line-height:17.42106819px;font-family:'Lucida Console';-inkscape-font-specification:'Lucida Console';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.69684273"
+       x="65.011375"
+       y="202.70752"
+       id="text4487"><tspan
+         sodipodi:role="line"
+         id="tspan4485"
+         x="65.011375"
+         y="202.70752"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:59.46391678px;font-family:Philosopher;-inkscape-font-specification:Philosopher;stroke-width:0.69684273">quafolio</tspan></text>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Drop">
+    <g
+       id="g4533"
+       transform="matrix(0.03466991,0,0,0.03466991,57.385038,114.8106)">
+      <path
+         id="path4516"
+         fill="transparent"
+         d="M 0,0 H 512 V 512 H 0 Z"
+         inkscape:connector-curvature="0"
+         style="fill-opacity:0" />
+      <g
+         id="g4520"
+         transform="translate(-6,-10)"
+         class="">
+        <path
+           id="path4518"
+           d="M 263.844,40.344 C 234.1,213.202 145.594,248.03 145.594,369.22 c 0,60.804 60.106,105.5 118.25,105.5 59.45,0 115.937,-41.803 115.937,-99.533 0,-116.332 -85.2,-162.312 -115.936,-334.843 z m -58.28,217.094 c -27.963,75.53 -5.105,154.567 54.25,179.375 15.185,6.348 31.724,7.714 47.905,6.28 C 191.585,492.88 121.883,363.277 205.561,257.437 Z"
+           inkscape:connector-curvature="0"
+           style="fill:#000000;fill-opacity:1" />
+      </g>
+    </g>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer3"
+     inkscape:label="Subtitle">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:41.71360016px;line-height:5.431458px;font-family:'Lucida Console';-inkscape-font-specification:'Lucida Console';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.21725832"
+       x="96.314674"
+       y="125.94716"
+       id="text4538"><tspan
+         sodipodi:role="line"
+         id="tspan4536"
+         x="96.314674"
+         y="125.94716"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9.26968861px;font-family:'Fira Mono';-inkscape-font-specification:'Fira Mono';stroke-width:0.21725832">Professional Games Portfolios</tspan></text>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer4"
+     inkscape:label="Icon">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:57.97243881px;line-height:7.54849434px;font-family:Philosopher;-inkscape-font-specification:Philosopher;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.30193979"
+       x="27.166016"
+       y="117.36645"
+       id="text4495"><tspan
+         sodipodi:role="line"
+         id="tspan4493"
+         x="27.166016"
+         y="117.36645"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Philosopher;-inkscape-font-specification:'Philosopher Bold';stroke-width:0.30193979">A</tspan></text>
+  </g>
+</svg>
