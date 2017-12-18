@@ -17,7 +17,12 @@
    inkscape:version="0.92.0 r15299"
    sodipodi:docname="aquafolio-logo.svg">
   <defs
-     id="defs2" />
+     id="defs2">
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect4768"
+       is_visible="true" />
+  </defs>
   <sodipodi:namedview
      id="base"
      pagecolor="#ffffff"
@@ -25,17 +30,18 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1"
-     inkscape:cx="497.81494"
-     inkscape:cy="359.921"
+     inkscape:zoom="1.4125"
+     inkscape:cx="540.05241"
+     inkscape:cy="328.09653"
      inkscape:document-units="mm"
-     inkscape:current-layer="layer2"
+     inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="1858"
+     inkscape:window-width="1857"
      inkscape:window-height="1057"
-     inkscape:window-x="1912"
-     inkscape:window-y="542"
-     inkscape:window-maximized="1" />
+     inkscape:window-x="55"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     showguides="true" />
   <metadata
      id="metadata5">
     <rdf:RDF>
@@ -55,45 +61,42 @@
      transform="translate(0,-87)">
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:133.79380798px;line-height:17.42106819px;font-family:'Lucida Console';-inkscape-font-specification:'Lucida Console';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.69684273"
-       x="65.011375"
-       y="202.70752"
-       id="text4487"><tspan
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:50.79999924px;line-height:6.61458302px;font-family:Philosopher;-inkscape-font-specification:Philosopher;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="41.539585"
+       y="207.83539"
+       id="text4539"><tspan
          sodipodi:role="line"
-         id="tspan4485"
-         x="65.011375"
-         y="202.70752"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:59.46391678px;font-family:Philosopher;-inkscape-font-specification:Philosopher;stroke-width:0.69684273">quafolio</tspan></text>
-  </g>
-  <g
-     inkscape:groupmode="layer"
-     id="layer2"
-     inkscape:label="Drop">
+         id="tspan4537"
+         x="41.539585"
+         y="207.83539"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:lato;-inkscape-font-specification:lato;stroke-width:0.26458332">Aquafolio</tspan></text>
     <g
-       id="g4533"
-       transform="matrix(0.03466991,0,0,0.03466991,57.385038,114.8106)">
+       id="g4851"
+       transform="matrix(0.05475833,-0.03161473,0.03161473,0.05475833,81.692754,211.15182)">
       <path
-         id="path4516"
+         id="path4834"
          fill="transparent"
          d="M 0,0 H 512 V 512 H 0 Z"
          inkscape:connector-curvature="0"
          style="fill-opacity:0" />
       <g
-         id="g4520"
+         id="g4838"
          transform="translate(-6,-10)"
          class="">
         <path
-           id="path4518"
-           d="M 263.844,40.344 C 234.1,213.202 145.594,248.03 145.594,369.22 c 0,60.804 60.106,105.5 118.25,105.5 59.45,0 115.937,-41.803 115.937,-99.533 0,-116.332 -85.2,-162.312 -115.936,-334.843 z m -58.28,217.094 c -27.963,75.53 -5.105,154.567 54.25,179.375 15.185,6.348 31.724,7.714 47.905,6.28 C 191.585,492.88 121.883,363.277 205.561,257.437 Z"
+           id="path4836"
+           d="m 418.79732,295.91925 c 24.32422,97.29992 -51.03951,181.59935 -151.33279,181.59935 -100.29329,0 -175.954637,-83.11197 -151.3328,-181.59935 15.13328,-60.53312 90.79968,-151.3328 151.3328,-302.6655875 C 285.11335,178.63451 399.75719,239.03837 418.79732,295.91925 Z"
            inkscape:connector-curvature="0"
-           style="fill:#000000;fill-opacity:1" />
+           style="fill:#000000;fill-opacity:1;stroke-width:1.00888526"
+           sodipodi:nodetypes="csscc" />
       </g>
     </g>
   </g>
   <g
      inkscape:groupmode="layer"
      id="layer3"
-     inkscape:label="Subtitle">
+     inkscape:label="Subtitle"
+     style="display:none">
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:41.71360016px;line-height:5.431458px;font-family:'Lucida Console';-inkscape-font-specification:'Lucida Console';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.21725832"
@@ -109,17 +112,5 @@
   <g
      inkscape:groupmode="layer"
      id="layer4"
-     inkscape:label="Icon">
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:57.97243881px;line-height:7.54849434px;font-family:Philosopher;-inkscape-font-specification:Philosopher;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.30193979"
-       x="27.166016"
-       y="117.36645"
-       id="text4495"><tspan
-         sodipodi:role="line"
-         id="tspan4493"
-         x="27.166016"
-         y="117.36645"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Philosopher;-inkscape-font-specification:'Philosopher Bold';stroke-width:0.30193979">A</tspan></text>
-  </g>
+     inkscape:label="Icon" />
 </svg>
