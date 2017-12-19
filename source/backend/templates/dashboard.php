@@ -82,9 +82,20 @@
 
           <!-- Projects List (Sortable) -->
           <ul id="sortable" style="list-style: none;">
+            <?php
+              foreach ($projects as $project)
+              {
+                echo '<li class="alert alert-dark">';
+                echo $project['title'];
+                echo '<div class="float-right">';
+                echo '<a class="btn btn-sm btn-primary" role="button">';
+                echo 'Edit';
+                echo '</a>';
+                echo '</div>';
+                echo '</li>';
+              }
+            ?>
             <li class="alert alert-dark">
-              <!-- Left Side -->
-              The Legend of Zelda: Ocarina of Time
 
               <!-- Right Side -->
               <div class="float-right">
