@@ -9,7 +9,7 @@
 
     function __construct($model, $controller)
     {
-      $this->model = model;
+      $this->model = $model;
       $this->controller = $controller;
     }
 

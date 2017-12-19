@@ -15,7 +15,7 @@
 
     public function get_template()
     {
-      return $this->template();
+      return $this->template;
     }
 
     public function get_projects()

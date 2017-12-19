@@ -22,6 +22,6 @@ $('document').ready(function () {
       </li>
     `;
 
-    $('#sortable').prepend(project);
+    $(project).hide().prependTo("#sortable").slideDown();
   })
 });

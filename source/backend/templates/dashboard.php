@@ -101,44 +101,6 @@
                 </button>
               </div>
             </li>
-            <li class="alert alert-dark">
-              <!-- Left Side -->
-              Super Mario: Odyssey
-
-              <!-- Right Side -->
-              <div class="float-right">
-                <!-- Edit -->
-                <a class="btn btn-sm btn-primary" href="#" role="button">
-                  <span class="oi oi-pencil"></span>
-                  &nbsp;
-                  Edit
-                </a>
-                <!-- Delete -->
-                <button class="btn btn-sm btn-danger" type="button" name="button">
-                  <span class="oi oi-trash"></span>
-                  Delete
-                </button>
-              </div>
-            </li>
-            <li class="alert alert-dark">
-              <!-- Left Side -->
-              Tony Hawk's Pro Skater 2
-
-              <!-- Right Side -->
-              <div class="float-right">
-                <!-- Edit -->
-                <a class="btn btn-sm btn-primary" href="#" role="button">
-                  <span class="oi oi-pencil"></span>
-                  &nbsp;
-                  Edit
-                </a>
-                <!-- Delete -->
-                <button class="btn btn-sm btn-danger" type="button" name="button">
-                  <span class="oi oi-trash"></span>
-                  Delete
-                </button>
-              </div>
-            </li>
           </ul>
         </div>
       </section>
