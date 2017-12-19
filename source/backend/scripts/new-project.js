@@ -55,6 +55,6 @@ $('document').ready(function () {
       button.prop('disabled', false);
     });
 
-    $(project.html).hide().prependTo("#sortable").slideDown();
+    $(project).hide().prependTo("#sortable").slideDown();
   })
 });
