@@ -27,7 +27,7 @@
         <span class="oi oi-arrow-left"></span>&nbsp;Back to frontend
       </a>
       <!-- Login Form -->
-      <form id="login-form" method="post">
+      <form id="login-form" class="form-control" method="post">
         <!-- Username -->
         <div class="form-group">
           <label for="username">
