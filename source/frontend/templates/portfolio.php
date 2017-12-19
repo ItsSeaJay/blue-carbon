@@ -18,14 +18,13 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
   </head>
   <body>
-    <header class="jumbotron">
-      <h1>
+    <header class="container">
+      <h1 style="text-align: center;">
         <a href="index.php"><?php echo $full_name ?></a>
       </h1>
     </header>
 
     <div class="container">
-      <!-- Thumbnails -->
       <?php
         // Echo project thumbnails
         $project_count = 0;
@@ -41,6 +40,7 @@
             {
               echo '</div>';
             }
+            // Otherwise, insert a new row
             echo '<div class="row">';
           }
 
@@ -57,7 +57,7 @@
         }
       ?>
     </div>
-    <footer class="jumbotron">
+    <footer class="container">
       <small><?php echo $copyright; ?></small>
     </footer>
   </body>

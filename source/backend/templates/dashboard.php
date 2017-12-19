@@ -76,13 +76,13 @@
           <h2>Projects</h2>
 
           <ul id="sortable" style="list-style: none;">
-            <li class="ui-state-default">
+            <li class="alert alert-light">
               The Legend of Zelda: Ocarina of Time
             </li>
-            <li class="ui-state-default">
+            <li class="alert alert-light">
               Super Mario: Odyssey
             </li>
-            <li class="ui-state-default">
+            <li class="alert alert-light">
               Tony Hawk's Pro Skater 2
             </li>
           </ul>
