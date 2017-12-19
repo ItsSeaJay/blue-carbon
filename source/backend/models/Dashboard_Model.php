@@ -18,6 +18,14 @@
       return $this->template;
     }
 
+    public function get_project($title)
+    {
+      $query = 'SELECT * FROM `projects` WHERE `title` = ?';
+      $statement = $GLOBALS['database']->prepared_statement($query, array($title));
+
+      return $statement->fetchObject();
+    }
+
     public function get_projects()
     {
       $query = "SELECT * FROM projects";

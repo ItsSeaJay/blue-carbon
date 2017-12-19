@@ -17,6 +17,11 @@
     {
       $projects = $this->model->get_projects();
 
+      if (isset($_GET['title']))
+      {
+        $project = $this->model->get_project($_GET['title']);
+      }
+
       require_once $this->model->get_template();
     }
   }

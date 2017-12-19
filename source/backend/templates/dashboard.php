@@ -96,9 +96,11 @@
                 echo '<li class="alert alert-dark">';
                 echo $project['title'];
                 echo '<div class="float-right">';
-                
+
                 // Edit Button
-                echo '<a class="btn btn-sm btn-primary" href="#" role="button">';
+                echo '<a class="btn btn-sm btn-primary" href="edit.php?title=';
+                echo urlencode($project['title']);
+                echo '" role="button">';
                 echo '<span class="oi oi-pencil"></span>';
                 echo '&nbsp;';
                 echo 'Edit';
