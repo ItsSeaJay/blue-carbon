@@ -13,8 +13,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <!-- Open Iconic -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" integrity="sha256-BJ/G+e+y7bQdrYkS2RBTyNfBHpA9IuGaPmf9htub5MQ=" crossorigin="anonymous">
-    <!-- JQuery UI -->
-    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
     <!-- Scripts -->
     <!-- JQuery -->
@@ -27,6 +25,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <!-- Bootstrap JS -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <!-- New Project -->
+    <script type="text/javascript" src="scripts/new-project.js">
+    </script>
   </head>
   <body>
     <!-- Header -->
@@ -69,20 +70,21 @@
       </nav>
     </header>
 
+    <!-- Content -->
     <div class="container">
       <section class="row">
-        <div class="col-md-12">
-          <h1>Dashboard</h1>
-          <h2>Projects</h2>
-
+        <div class="col-md">
+          <button id="new" class="btn btn-success" type="button" name="button">
+            <span class="oi oi-document"></span>&nbsp;New
+          </button>
           <ul id="sortable" style="list-style: none;">
-            <li class="alert alert-light">
+            <li class="alert alert-dark">
               The Legend of Zelda: Ocarina of Time
             </li>
-            <li class="alert alert-light">
+            <li class="alert alert-dark">
               Super Mario: Odyssey
             </li>
-            <li class="alert alert-light">
+            <li class="alert alert-dark">
               Tony Hawk's Pro Skater 2
             </li>
           </ul>
