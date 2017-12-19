@@ -1,4 +1,6 @@
 <?php
+  require_once '../../libraries/red-iron/red-iron/database.php';
+
   /**
    * Controller for the dashboard
    */
@@ -13,7 +15,9 @@
 
     public function new_project()
     {
-      # code...
+      $query = "INSERT INTO `projects` (`id`, `title`, `subtitle`, `initiative`, `description`, `thumbnail`) VALUES (NULL, 'Untitled', 'Unsubtitled', '', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'http://via.placeholder.com/640x480')";
+
+      $statement = $GLOBALS['database']->prepared_statement($query, array());
     }
   }
 
