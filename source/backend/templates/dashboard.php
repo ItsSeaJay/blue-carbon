@@ -75,17 +75,69 @@
       <section class="row">
         <div class="col-md">
           <button id="new" class="btn btn-success" type="button" name="button">
-            <span class="oi oi-document"></span>&nbsp;New
+            <span class="oi oi-document"></span>
+            &nbsp;
+            New
           </button>
+
+          <!-- Projects List (Sortable) -->
           <ul id="sortable" style="list-style: none;">
             <li class="alert alert-dark">
+              <!-- Left Side -->
               The Legend of Zelda: Ocarina of Time
+
+              <!-- Right Side -->
+              <div class="float-right">
+                <!-- Edit -->
+                <a class="btn btn-sm btn-primary" href="#" role="button">
+                  <span class="oi oi-pencil"></span>
+                  &nbsp;
+                  Edit
+                </a>
+                <!-- Delete -->
+                <button class="btn btn-sm btn-danger" type="button" name="button">
+                  <span class="oi oi-trash"></span>
+                  Delete
+                </button>
+              </div>
             </li>
             <li class="alert alert-dark">
+              <!-- Left Side -->
               Super Mario: Odyssey
+
+              <!-- Right Side -->
+              <div class="float-right">
+                <!-- Edit -->
+                <a class="btn btn-sm btn-primary" href="#" role="button">
+                  <span class="oi oi-pencil"></span>
+                  &nbsp;
+                  Edit
+                </a>
+                <!-- Delete -->
+                <button class="btn btn-sm btn-danger" type="button" name="button">
+                  <span class="oi oi-trash"></span>
+                  Delete
+                </button>
+              </div>
             </li>
             <li class="alert alert-dark">
+              <!-- Left Side -->
               Tony Hawk's Pro Skater 2
+
+              <!-- Right Side -->
+              <div class="float-right">
+                <!-- Edit -->
+                <a class="btn btn-sm btn-primary" href="#" role="button">
+                  <span class="oi oi-pencil"></span>
+                  &nbsp;
+                  Edit
+                </a>
+                <!-- Delete -->
+                <button class="btn btn-sm btn-danger" type="button" name="button">
+                  <span class="oi oi-trash"></span>
+                  Delete
+                </button>
+              </div>
             </li>
           </ul>
         </div>
