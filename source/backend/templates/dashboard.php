@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Aquafolio Dashboard</title>
+
     <!-- Styles -->
     <!-- Main -->
     <link rel="stylesheet" href="../styles/main.css">
@@ -12,11 +13,16 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <!-- Open Iconic -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" integrity="sha256-BJ/G+e+y7bQdrYkS2RBTyNfBHpA9IuGaPmf9htub5MQ=" crossorigin="anonymous">
+    <!-- JQuery UI -->
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
     <!-- Scripts -->
     <!-- JQuery -->
     <script  src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <!-- JQuery UI -->
     <script src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+    <!-- Sortable -->
+    <script type="text/javascript" src="scripts/sortable.js"></script>
     <!-- Popper JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <!-- Bootstrap JS -->
@@ -63,51 +69,25 @@
       </nav>
     </header>
 
-    <div id="wrapper" class="toggled">
-      <!-- Sidebar -->
-      <div id="sidebar-wrapper">
-        <ul class="sidebar-nav">
-          <li>
-            <a href="#">Dashboard</a>
-          </li>
-          <li>
-            <a href="#">Projects</a>
-          </li>
-          <li>
-            <a href="#">Profile</a>
-          </li>
-          <li>
-            <a href="#">Administration</a>
-          </li>
-          <li>
-            <a href="#">About</a>
-          </li>
-        </ul>
-      </div>
-      <!-- /#sidebar-wrapper -->
+    <div class="container">
+      <section class="row">
+        <div class="col-md-12">
+          <h1>Dashboard</h1>
+          <h2>Projects</h2>
 
-      <!-- Page Content -->
-      <div id="page-content-wrapper">
-        <div class="container-fluid">
-          <section class="row">
-            <div class="col-md">
-              <h1>Dashboard</h1>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-              </p>
-            </div>
-          </section>
+          <ul id="sortable" style="list-style: none;">
+            <li class="ui-state-default">
+              The Legend of Zelda: Ocarina of Time
+            </li>
+            <li class="ui-state-default">
+              Super Mario: Odyssey
+            </li>
+            <li class="ui-state-default">
+              Tony Hawk's Pro Skater 2
+            </li>
+          </ul>
         </div>
-      </div>
-      <!-- /#page-content-wrapper -->
-
-      <!-- Menu Toggle Script -->
-      <script>
-        $("#menu-toggle").click(function(event) {
-            event.preventDefault();
-            $("#wrapper").toggleClass("toggled");
-        });
-      </script>
+      </section>
     </div>
   </body>
 </html>
