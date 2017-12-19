@@ -80,7 +80,12 @@
                   <label for="title">
                     Title
                   </label>
-                  <input class="form-control" type="text" name="title" value="<?php echo $project->title; ?>" placeholder="Title">
+                  <div class="input-group">
+                    <div class="input-group-addon">
+                      <span class="oi oi-text"></span>
+                    </div>
+                    <input class="form-control" type="text" name="title" value="<?php echo $project->title; ?>" placeholder="Title">
+                  </div>
                 </div>
               </div>
             </div>
@@ -92,6 +97,25 @@
                     Subtitle
                   </label>
                   <input class="form-control" type="text" name="title" value="<?php echo $project->subtitle; ?>" placeholder="">
+                </div>
+              </div>
+            </div>
+            <!-- Description -->
+            <div class="row">
+              <div class="col-md">
+                <div class="form-group">
+                  <label for="title">
+                    Description
+                  </label>
+                  <div class="input-group">
+                    <textarea name="description" class="form-control" rows="16"><?php echo $project->description; ?></textarea>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md">
+                <label>Preview</label>
+                <div class="form-control">
+                  <?php echo $project->description; ?>
                 </div>
               </div>
             </div>
