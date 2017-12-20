@@ -103,18 +103,24 @@
               </div>
             </div>
             <!-- Description -->
+            <p>Description</p>
             <div class="row">
               <div class="col-md">
                 <div class="form-group">
                   <label for="title">
-                    Description
+                    Edit
                   </label>
                   <div class="input-group">
                     <textarea id="description" name="description" class="form-control" rows="16"><?php echo $project->description; ?></textarea>
                   </div>
                 </div>
-                <a href="#">
-                  <small>This editor uses Markdown</small>
+                <!-- Markdown Notice -->
+                <a href="https://www.markdownguide.org/cheat-sheet" target="_blank">
+                  <small>
+                    Use Markdown
+                    <img src="resources/markdown-seeklogo.com.svg" alt="Markdown Logo" width="16px" height="auto">
+                    to edit the project description.
+                  </small>
                 </a>
               </div>
               <div class="col-md">
@@ -127,8 +133,44 @@
               </div>
             </div>
           </form>
+          <!-- Buttons -->
+          <!-- Button to trigger cancel modal -->
+          <a href="#cancel-modal" role="button" class="btn btn-danger" data-toggle="modal">
+            <span class="oi oi-circle-x"></span>
+            &nbsp;
+            Discard Changes
+          </a>
         </div>
       </section>
     </div>
+
+    <!-- Modals -->
+    <!-- Cancel Modal -->
+    <div id="cancel-modal" class="modal fade" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Discard Changes</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>
+              Are you sure? All unsaved changes will be lost.
+            </p>
+          </div>
+          <div class="modal-footer">
+            <a href="dashboard.php" class="btn btn-danger">
+              Yes, I'm Sure
+            </a>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">
+              Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   </body>
 </html>

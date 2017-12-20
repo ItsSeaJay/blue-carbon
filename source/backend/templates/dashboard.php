@@ -78,7 +78,6 @@
           <button id="new" class="btn btn-success" type="button" name="button">
             <span class="oi oi-document"></span>
             &nbsp;
-            New
           </button>
         </div>
       </section>
