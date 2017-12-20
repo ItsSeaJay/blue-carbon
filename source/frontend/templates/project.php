@@ -38,7 +38,15 @@
           <img class="responsive" src=<?php echo '"' . $project->thumbnail . '"'; ?> alt=<?php echo '"' . $project->title . ' Thumbnail"'; ?>>
 
           <!-- Description -->
-          <p><?php echo $project->description; ?></p>
+          <p>
+            <?php
+              require_once '../libraries/parsedown/parsedown.php';
+
+              $parsedown = new Parsedown();
+
+              echo $parsedown->text($project->description);
+            ?>
+          </p>
         </div>
       </div>
     </div>

@@ -143,7 +143,11 @@
                 </label>
                 <div id="preview" class="form-group">
                   <?php
-                    echo $project->description;
+                    require_once '../../libraries/parsedown/parsedown.php';
+
+                    $parsedown = new Parsedown();
+
+                    echo $parsedown->text($project->description);
                   ?>
                 </div>
               </div>
