@@ -113,6 +113,9 @@
                     <textarea id="description" name="description" class="form-control" rows="16"><?php echo $project->description; ?></textarea>
                   </div>
                 </div>
+                <a href="#">
+                  <small>This editor uses Markdown</small>
+                </a>
               </div>
               <div class="col-md">
                 <label>Preview</label>
