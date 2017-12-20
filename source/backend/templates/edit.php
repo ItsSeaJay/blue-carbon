@@ -60,8 +60,10 @@
               </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="logout.php">
-                <span class="oi oi-account-logout"></span>&nbsp;Logout
+              <a class="nav-link" href="#logout-modal" data-toggle="modal">
+                <span class="oi oi-account-logout"></span>
+                &nbsp;
+                Logout
               </a>
             </li>
           </ul>
@@ -71,10 +73,12 @@
 
     <!-- Content -->
     <div class="container">
+      <!-- Title -->
+      <h1>Edit <?php echo $project->title; ?></h1>
       <!-- Edit Form -->
       <section class="row">
         <div class="col-md">
-          <form action="index.html" method="post">
+          <form action="edit_project.php" method="post">
             <!-- Title -->
             <div class="row">
               <div class="col">
@@ -98,19 +102,26 @@
                   <label for="title">
                     Subtitle
                   </label>
-                  <input class="form-control" type="text" name="title" value="<?php echo $project->subtitle; ?>" placeholder="">
+                  <div class="input-group">
+                    <div class="input-group-addon">
+                      <span class="oi oi-ellipses"></span>
+                    </div>
+                    <input class="form-control" type="text" name="subtitle" value="<?php echo $project->subtitle; ?>" placeholder="Subtitle">
+                  </div>
                 </div>
               </div>
             </div>
             <!-- Description -->
-            <p>Description</p>
             <div class="row">
               <div class="col-md">
                 <div class="form-group">
                   <label for="title">
-                    Edit
+                    Description (Code)
                   </label>
                   <div class="input-group">
+                    <div class="input-group-addon">
+                      <span class="oi oi-code"></span>
+                    </div>
                     <textarea id="description" name="description" class="form-control" rows="16"><?php echo $project->description; ?></textarea>
                   </div>
                 </div>
@@ -124,8 +135,10 @@
                 </a>
               </div>
               <div class="col-md">
-                <label>Preview</label>
-                <div id="preview" class="form-control">
+                <label>
+                  Description (Preview)
+                </label>
+                <div id="preview" class="form-group">
                   <?php
                     echo $project->description;
                   ?>
@@ -163,11 +176,41 @@
           </div>
           <div class="modal-body">
             <p>
-              Are you sure? All unsaved changes will be lost.
+              Are you sure? All unsaved changes to
+              <?php echo $project->title; ?>
+              will be lost.
             </p>
           </div>
           <div class="modal-footer">
             <a href="dashboard.php" class="btn btn-danger">
+              Yes, I'm Sure
+            </a>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">
+              Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Logout Modal -->
+    <div id="logout-modal" class="modal fade" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Logout</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>
+              Are you sure? All unsaved changes to
+              <?php echo $project->title; ?>
+              will be lost.
+            </p>
+          </div>
+          <div class="modal-footer">
+            <a href="logout.php" class="btn btn-danger">
               Yes, I'm Sure
             </a>
             <button type="button" class="btn btn-secondary" data-dismiss="modal">

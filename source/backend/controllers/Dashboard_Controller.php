@@ -19,6 +19,23 @@
 
       $GLOBALS['database']->prepared_statement($query, array());
     }
+
+    public function edit_project()
+    {
+      $query = 'UPDATE `projects` SET `title` = ?, `subtitle` = ?, `description` = ? WHERE `projects`.`title` = ?';
+
+      if (isset($_POST))
+      {
+        $data = array(
+          $_POST['title'],
+          $_POST['subtitle'],
+          $_POST['description'],
+          $_POST['title']
+        );
+
+        $GLOBALS['database']->prepared_statement($query, $data);
+      }
+    }
   }
 
 ?>
