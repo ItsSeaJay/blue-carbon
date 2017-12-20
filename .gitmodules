@@ -4,3 +4,6 @@
 [submodule "libraries/parsedown"]
 	path = libraries/parsedown
 	url = https://github.com/erusev/parsedown.git
+[submodule "libraries/htmlpurifier"]
+	path = libraries/htmlpurifier
+	url = https://github.com/ezyang/htmlpurifier.git
