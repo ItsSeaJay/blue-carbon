@@ -62,7 +62,9 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="logout.php">
-                <span class="oi oi-account-logout"></span>&nbsp;Logout
+                <span class="oi oi-account-logout"></span>
+                &nbsp;
+                Logout
               </a>
             </li>
           </ul>
@@ -78,6 +80,7 @@
           <button id="new" class="btn btn-success" type="button" name="button">
             <span class="oi oi-document"></span>
             &nbsp;
+            New Project
           </button>
         </div>
       </section>

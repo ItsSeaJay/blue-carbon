@@ -10,7 +10,7 @@ $('document').ready(function () {
         <!-- Right Side -->
         <div class="float-right">
           <!-- Edit -->
-          <a class="btn btn-sm btn-primary" href="#" role="button">
+          <a class="btn btn-sm btn-primary" href="edit.php?title=Untitled" role="button">
             <span class="oi oi-pencil"></span>
             &nbsp;
             Edit
@@ -32,7 +32,7 @@ $('document').ready(function () {
 
     var button = $(this);
 
-    button.prop("disabled", true);
+    button.prop('disabled', true);
 
     request = $.ajax({
       url: 'new_project.php',
