@@ -22,7 +22,7 @@
 
     public function edit_project()
     {
-      $query = 'UPDATE `projects` SET `title` = ?, `subtitle` = ?, `description` = ? WHERE `projects`.`title` = ?';
+      $query = 'UPDATE `projects` SET `title` = ?, `subtitle` = ?, `description` = ? WHERE `id` = ?';
 
       if (isset($_POST))
       {
@@ -30,7 +30,7 @@
           $_POST['title'],
           $_POST['subtitle'],
           $_POST['description'],
-          $_POST['title']
+          $_POST['id']
         );
 
         $GLOBALS['database']->prepared_statement($query, $data);

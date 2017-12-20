@@ -1,1 +1,1 @@
-UPDATE `projects` SET `title` = ?, `subtitle` = ?, `description` = ? WHERE `projects`.`title` = ?
+UPDATE `projects` SET `title` = ?, `subtitle` = ?, `description` = ? WHERE `id` = ?

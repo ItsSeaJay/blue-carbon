@@ -77,8 +77,11 @@
       <h1>Edit <?php echo $project->title; ?></h1>
       <!-- Edit Form -->
       <section class="row">
+        <!-- Form Body -->
         <div class="col-md">
           <form action="edit_project.php" method="post">
+            <!-- ID -->
+            <input type="number" name="id" value="<?php echo $project->id; ?>" hidden="true">
             <!-- Title -->
             <div class="row">
               <div class="col">
