@@ -25,6 +25,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <!-- Bootstrap JS -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <!-- Preview Description -->
+    <script src="scripts/preview-description.js" charset="utf-8"></script>
   </head>
   <body>
     <!-- Header -->
@@ -108,14 +110,16 @@
                     Description
                   </label>
                   <div class="input-group">
-                    <textarea name="description" class="form-control" rows="16"><?php echo $project->description; ?></textarea>
+                    <textarea id="description" name="description" class="form-control" rows="16"><?php echo $project->description; ?></textarea>
                   </div>
                 </div>
               </div>
               <div class="col-md">
                 <label>Preview</label>
-                <div class="form-control">
-                  <?php echo $project->description; ?>
+                <div id="preview" class="form-control">
+                  <?php
+                    echo $project->description;
+                  ?>
                 </div>
               </div>
             </div>
