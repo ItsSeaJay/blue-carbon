@@ -58,7 +58,9 @@
       ?>
     </div>
     <footer class="container">
-      <small><?php echo $copyright; ?></small>
+      <small class="text-center">
+        <?php echo $copyright; ?>
+      </small>
     </footer>
   </body>
 </html>

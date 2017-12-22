@@ -28,7 +28,7 @@
 
     public function get_all_projects()
     {
-      $query = "SELECT * FROM projects";
+      $query = "SELECT * FROM projects ORDER BY initiative ASC";
       $statement = $GLOBALS['database']->prepared_statement($query, array());
 
       return $statement->fetchAll();
