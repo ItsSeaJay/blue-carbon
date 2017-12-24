@@ -87,38 +87,10 @@
       <!-- Projects -->
       <section class="row">
         <div class="col-md">
-
           <!-- Projects List (Sortable) -->
           <ul id="sortable" style="list-style: none;">
             <?php
-              // Output existing projects
-              foreach ($projects as $project)
-              {
-                // Single thumbnail
-                echo '<li class="alert alert-dark">';
-                echo $project['title'];
-                echo '<div class="float-right">';
-
-                // Edit Button
-                echo '<a class="btn btn-sm btn-primary" href="edit.php?title=';
-                echo urlencode($project['title']);
-                echo '" role="button">';
-                echo '<span class="oi oi-pencil"></span>';
-                echo '&nbsp;';
-                echo 'Edit';
-                echo '</a>';
-
-                echo '&nbsp;';
-
-                // Delete button
-                echo '<button class="btn btn-sm btn-danger">';
-                echo '<span class="oi oi-trash"></span>';
-                echo '&nbsp;';
-                echo 'Delete';
-                echo '</button>';
-                echo '</div>';
-                echo '</li>';
-              }
+              $this->echo_project_sortable();
             ?>
           </ul>
         </div>
