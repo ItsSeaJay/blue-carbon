@@ -1,7 +1,7 @@
 var request;
 
 $('document').ready(function () {
-  $('#new').click(function (event) {
+  $('#new-project').submit(function (event) {
     var project = `
       <li class="alert alert-dark">
         <!-- Left Side -->
@@ -55,6 +55,6 @@ $('document').ready(function () {
       button.prop('disabled', false);
     });
 
-    $(project).hide().prependTo("#sortable").slideDown();
+    $(project).hide().appendTo("#sortable").slideDown();
   })
 });

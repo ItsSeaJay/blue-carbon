@@ -74,27 +74,90 @@
 
     <!-- Content -->
     <div class="container">
+      <!-- Projects -->
+      <section class="row" style="padding-top: 32px;">
+        <div class="col-md">
+          <!-- Projects List (Sortable) -->
+          <ul id="sortable" style="list-style: none;">
+            <?php
+              // $this->echo_project_sortable();
+
+              // Output existing projects
+              foreach ($projects as $project)
+              {
+                // Single thumbnail
+                echo '<li class="alert alert-dark" data-id=' . $project['id'] . '>';
+                echo $project['title'];
+                echo '<div class="float-right">';
+
+                // Edit Button
+                echo '<a class="btn btn-sm btn-primary" href="edit.php?title=';
+                echo urlencode($project['title']);
+                echo '" role="button">';
+                echo '<span class="oi oi-pencil"></span>';
+                echo '&nbsp;';
+                echo 'Edit';
+                echo '</a>';
+
+                echo '&nbsp;';
+
+                // Delete button
+                echo '<button class="btn btn-sm btn-danger">';
+                echo '<span class="oi oi-trash"></span>';
+                echo '&nbsp;';
+                echo 'Delete';
+                echo '</button>';
+                echo '</div>';
+                echo '</li>';
+              }
+            ?>
+          </ul>
+        </div>
+      </section>
+
+      <hr>
+
       <!-- Controls -->
       <section class="row">
         <div class="col-md">
-          <button id="new" class="btn btn-success" type="button" name="button">
+          <button id="new" class="btn btn-success" type="button" name="button" data-toggle="modal" data-target="#new-project-modal">
             <span class="oi oi-document"></span>
             &nbsp;
             New Project
           </button>
         </div>
       </section>
-      <!-- Projects -->
-      <section class="row">
-        <div class="col-md">
-          <!-- Projects List (Sortable) -->
-          <ul id="sortable" style="list-style: none;">
-            <?php
-              $this->echo_project_sortable();
-            ?>
-          </ul>
+    </div>
+
+    <!-- Modals -->
+    <!-- New Project -->
+    <div id="title-select" class="modal fade">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">New Project</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Choose a title for the new project:</p>
+            <form id="new-project" class="form">
+              <div class="form-group">
+                <label for="title">Title</label>
+                <input class="form-control" type="text" name="title" value="Untitled" placeholder="Title">
+                <small>
+                  <em>The title of your new project must be unique.</em>
+                </small>
+              </div>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">Create</button>
+            </form>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          </div>
         </div>
-      </section>
+      </div>
     </div>
   </body>
 </html>
