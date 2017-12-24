@@ -3,6 +3,8 @@ var request;
 $(function() {
   $('#sortable').sortable({
     axis: 'y',
+    containment: 'parent',
+    tolerance: 'pointer',
     stop: function (e, ui) {
       // Abort any pending request
       if (request) {

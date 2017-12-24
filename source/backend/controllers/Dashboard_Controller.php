@@ -27,12 +27,13 @@
 
       $query = "INSERT INTO `projects` (`id`, `title`, `subtitle`, `initiative`, `description`, `thumbnail`) VALUES (NULL, ?, '?', '', 'No description provided.', 'http://via.placeholder.com/640x480');";
 
-      $title = filter_var($_POST['title'], FILTER_SANITIZE_STRING);
-      $subtitle = filter_var($_POST['subtitle'], FILTER_SANITIZE_STRING);
+      if (isset($_POST))
+      {
+        $title = filter_var($_POST['title'], FILTER_SANITIZE_STRING);
+        $subtitle = filter_var($_POST['subtitle'], FILTER_SANITIZE_STRING);
 
-      $GLOBALS['database']->prepared_statement($query, array($title, $subtitle));
-
-      echo json_encode($response);
+        $GLOBALS['database']->prepared_statement($query, array($title, $subtitle));
+      }
     }
 
     public function edit_project()
