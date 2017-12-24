@@ -144,9 +144,13 @@
             <p>Choose a title for the new project:</p>
             <form id="title-select" class="form">
               <div class="form-group">
+                <!-- Title -->
                 <input class="form-control" type="text" name="title" placeholder="Title">
-                <small>
-                  <em>The title of your new project must be unique.</em>
+                <!-- Errors -->
+                <small id="unique-title" class="invalid-feedback">
+                  <em>
+                    The title of your new project must be unique.
+                  </em>
                 </small>
               </div>
               <p>You can always change this title later.</p>
