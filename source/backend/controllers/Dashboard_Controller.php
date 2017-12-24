@@ -20,9 +20,13 @@
 
     public function new_project()
     {
-      $query = "INSERT INTO `projects` (`id`, `title`, `subtitle`, `initiative`, `description`, `thumbnail`) VALUES (NULL, 'Untitled', 'Unsubtitled', '', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'http://via.placeholder.com/640x480');";
+      $response = array();
 
-      $GLOBALS['database']->prepared_statement($query, array());
+      $query = "INSERT INTO `projects` (`id`, `title`, `subtitle`, `initiative`, `description`, `thumbnail`) VALUES (NULL, ?, 'Unsubtitled', '', 'No description provided.', 'http://via.placeholder.com/640x480');";
+
+      $title = filter_var($_POST['title'], FILTER_SANITIZE_STRING);
+
+      $GLOBALS['database']->prepared_statement($query, array($_POST['title']));
     }
 
     public function edit_project()

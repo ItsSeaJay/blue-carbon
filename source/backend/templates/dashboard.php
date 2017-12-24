@@ -120,7 +120,7 @@
       <!-- Controls -->
       <section class="row">
         <div class="col-md">
-          <button id="new" class="btn btn-success" type="button" name="button" data-toggle="modal" data-target="#new-project-modal">
+          <button id="new" class="btn btn-success" type="button" name="button" data-toggle="modal" data-target="#new-project">
             <span class="oi oi-document"></span>
             &nbsp;
             New Project
@@ -131,7 +131,7 @@
 
     <!-- Modals -->
     <!-- New Project -->
-    <div id="title-select" class="modal fade">
+    <div id="new-project" class="modal fade">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -142,18 +142,18 @@
           </div>
           <div class="modal-body">
             <p>Choose a title for the new project:</p>
-            <form id="new-project" class="form">
+            <form id="title-select" class="form">
               <div class="form-group">
-                <label for="title">Title</label>
-                <input class="form-control" type="text" name="title" value="Untitled" placeholder="Title">
+                <input class="form-control" type="text" name="title" placeholder="Title">
                 <small>
                   <em>The title of your new project must be unique.</em>
                 </small>
               </div>
+              <p>You can always change this title later.</p>
           </div>
           <div class="modal-footer">
             <button type="submit" class="btn btn-primary">Create</button>
-            </form>
+          </form>
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
           </div>
         </div>

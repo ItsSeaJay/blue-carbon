@@ -1,60 +1,68 @@
 var request;
 
 $('document').ready(function () {
-  $('#new-project').submit(function (event) {
-    var project = `
-      <li class="alert alert-dark">
-        <!-- Left Side -->
-        Untitled
+  $('#title-select').submit(function (event) {
+    var modal = '#new-project';
+    var form = $('#title-select');
+    var title = form.find('input[name="title"]').val();
 
-        <!-- Right Side -->
-        <div class="float-right">
-          <!-- Edit -->
-          <a class="btn btn-sm btn-primary" href="edit.php?title=Untitled" role="button">
-            <span class="oi oi-pencil"></span>
-            &nbsp;
-            Edit
-          </a>
-          <!-- Delete -->
-          <button class="btn btn-sm btn-danger" type="button" name="button">
-            <span class="oi oi-trash"></span>
-            Delete
-          </button>
-        </div>
-      </li>
-    `;
+    console.log(title);
 
     event.preventDefault();
 
-    if (request) {
-      request.abort();
+    if (title.length > 0) {
+      if (request) {
+        request.abort();
+      }
+
+      var inputs = form.find('input, select, button, textarea');
+      data = form.serialize();
+
+      inputs.prop('disabled', true);
+
+      request = $.ajax({
+        url: 'new_project.php',
+        type: 'post',
+        data: data
+      });
+
+      request.done(function (response, status, jqXHR) {
+        var project = `
+          <li class="alert alert-dark">
+            <!-- Left Side -->
+            ` + title + `
+
+            <!-- Right Side -->
+            <div class="float-right">
+              <!-- Edit -->
+              <a class="btn btn-sm btn-primary" href="edit.php?title=` + encodeURIComponent(title) + `" role="inputs"><span class="oi oi-pencil"></span>&nbsp;Edit</a>
+              <!-- Delete -->
+              <inputs class="btn btn-sm btn-danger" type="inputs" name="inputs">
+                <span class="oi oi-trash"></span>
+                Delete
+              </inputs>
+            </div>
+          </li>
+        `;
+
+        console.log(response);
+        $(modal).modal('hide');
+        $(project).hide().appendTo("#sortable").slideDown();
+      });
+
+      request.fail(function (jqXHR, status, error) {
+        console.error(
+          'The following error occurred: ',
+          status,
+          error
+        )
+      });
+
+      request.always(function () {
+        inputs.prop('disabled', false);
+      });
+    } else {
+      // Add error for 0 length titles
     }
-
-    var button = $(this);
-
-    button.prop('disabled', true);
-
-    request = $.ajax({
-      url: 'new_project.php',
-      type: 'post'
-    });
-
-    request.done(function (response, status, jqXHR) {
-      console.log(response);
-    });
-
-    request.fail(function (jqXHR, status, error) {
-      console.error(
-        'The following error occurred: ',
-        status,
-        error
-      )
-    });
-
-    request.always(function () {
-      button.prop('disabled', false);
-    });
-
-    $(project).hide().appendTo("#sortable").slideDown();
-  })
+  });
 });
