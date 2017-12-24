@@ -141,19 +141,43 @@
             </button>
           </div>
           <div class="modal-body">
-            <p>Choose a title for the new project:</p>
-            <form id="title-select" class="form">
+            <p>
+              A project is any single piece of work that you want an employer to see. Make it a good one!
+            </p>
+            <form id="details" class="form">
+              <!-- title -->
               <div class="form-group">
-                <!-- Title -->
+                <label for="title">
+                  <h6>
+                    <strong>Title</strong>
+                  </h6>
+                </label>
                 <input class="form-control" type="text" name="title" placeholder="Title">
                 <!-- Errors -->
+                <small id="blank-title" class="invalid-feedback">
+                  <em>
+                    The new project's title cannot be blank.
+                  </em>
+                </small>
                 <small id="unique-title" class="invalid-feedback">
                   <em>
-                    The title of your new project must be unique.
+                    The new project's title must be unique.
                   </em>
                 </small>
               </div>
-              <p>You can always change this title later.</p>
+
+              <!-- Subtitle -->
+              <div class="form-group">
+                <label for="subtitle">
+                  <h6>
+                    <strong>Subtitle</strong>
+                  </h6>
+                </label>
+                <input class="form-control" type="text" name="subtitle" placeholder="Subtitle">
+              </div>
+              <p>
+                You can always change these details later.
+              </p>
           </div>
           <div class="modal-footer">
             <button type="submit" class="btn btn-primary">Create</button>

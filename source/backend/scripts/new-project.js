@@ -1,10 +1,11 @@
 var request;
 
 $('document').ready(function () {
-  $('#title-select').submit(function (event) {
+  $('#details').submit(function (event) {
     var modal = '#new-project';
-    var form = $('#title-select');
+    var form = $('#details');
     var title = form.find('input[name="title"]').val();
+    var uri = encodeURIComponent(title);
 
     console.log(title);
 
@@ -31,11 +32,12 @@ $('document').ready(function () {
           <li class="alert alert-dark">
             <!-- Left Side -->
             ` + title + `
-
             <!-- Right Side -->
             <div class="float-right">
               <!-- Edit -->
-              <a class="btn btn-sm btn-primary" href="edit.php?title=` + encodeURIComponent(title) + `" role="inputs"><span class="oi oi-pencil"></span>&nbsp;Edit</a>
+              <a class="btn btn-sm btn-primary" href="edit.php?title=` +
+              uri +
+              `" role="inputs"><span class="oi oi-pencil"></span>&nbsp;Edit</a>
               <!-- Delete -->
               <inputs class="btn btn-sm btn-danger" type="inputs" name="inputs">
                 <span class="oi oi-trash"></span>
@@ -62,7 +64,7 @@ $('document').ready(function () {
         inputs.prop('disabled', false);
       });
     } else {
-      // Add error for 0 length titles
+      $('#b-title').slideDown();
     }
   });
 });

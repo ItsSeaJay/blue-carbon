@@ -20,13 +20,19 @@
 
     public function new_project()
     {
-      $response = array();
+      $response = array(
+        'success' => false,
+        'message' => 'Unspecified error'
+      );
 
-      $query = "INSERT INTO `projects` (`id`, `title`, `subtitle`, `initiative`, `description`, `thumbnail`) VALUES (NULL, ?, 'Unsubtitled', '', 'No description provided.', 'http://via.placeholder.com/640x480');";
+      $query = "INSERT INTO `projects` (`id`, `title`, `subtitle`, `initiative`, `description`, `thumbnail`) VALUES (NULL, ?, '?', '', 'No description provided.', 'http://via.placeholder.com/640x480');";
 
       $title = filter_var($_POST['title'], FILTER_SANITIZE_STRING);
+      $subtitle = filter_var($_POST['subtitle'], FILTER_SANITIZE_STRING);
 
-      $GLOBALS['database']->prepared_statement($query, array($_POST['title']));
+      $GLOBALS['database']->prepared_statement($query, array($title, $subtitle));
+
+      echo json_encode($response);
     }
 
     public function edit_project()
