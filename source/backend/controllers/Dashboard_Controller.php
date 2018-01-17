@@ -35,10 +35,14 @@
         $statement = $GLOBALS['database']->prepared_statement($query, array($title));
         $row = $statement->fetchObject() ?? '';
 
-        if ($row != null && $row != '') {
+        if ($row->total === 0) {
+          // Then proceed to insert that value into the database
           $query = "INSERT INTO `projects` (`id`, `title`, `subtitle`, `initiative`, `description`, `thumbnail`) VALUES (NULL, ?, ?, 'No description provided', '', 'http://via.placeholder.com/640x480')";
 
           $GLOBALS['database']->prepared_statement($query, array($title, $subtitle));
+
+          $response['success'] = true;
+          $response['message'] = 'Database record inserted successfully';
         } else {
           // That project already exists in the database
           $response['success'] = false;
@@ -46,7 +50,7 @@
         }
       }
 
-      // Send back the AJAX response to Javascript
+      // Send back the AJAX response to Javascript regardless of what happened
       echo json_encode($response) ?? '';
     }
 
