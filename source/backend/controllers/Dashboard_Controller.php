@@ -25,14 +25,25 @@
         'message' => 'Unspecified error'
       );
 
-      $query = "INSERT INTO `projects` (`id`, `title`, `subtitle`, `initiative`, `description`, `thumbnail`) VALUES (NULL, ?, ?, '', '', 'http://via.placeholder.com/640x480')";
-
       if (isset($_POST))
       {
         $title = filter_var($_POST['title'], FILTER_SANITIZE_STRING);
         $subtitle = filter_var($_POST['subtitle'], FILTER_SANITIZE_STRING);
 
-        $GLOBALS['database']->prepared_statement($query, array($title, $subtitle));
+        // Check that the project does not already exist
+        $query = "SELECT `title` FROM `projects` WHERE `title` = ?";
+        $statement = $GLOBALS['database']->prepared_statement($query, array($title));
+        $row = $statement->fetchObject() ?? '';
+
+        if ($row != null && $row != '') {
+          $query = "INSERT INTO `projects` (`id`, `title`, `subtitle`, `initiative`, `description`, `thumbnail`) VALUES (NULL, ?, ?, 'No description provided', '', 'http://via.placeholder.com/640x480')";
+
+          $GLOBALS['database']->prepared_statement($query, array($title, $subtitle));
+        } else {
+          // That project already exists in the database
+          $response['success'] = false;
+          $response['message'] = 'Error: entered title already exists.';
+        }
       }
 
       // Send back the AJAX response to Javascript

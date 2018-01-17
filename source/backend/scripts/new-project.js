@@ -34,6 +34,7 @@ $('document').ready(function () {
 
       request.done(function (response, status, jqXHR) {
         response = JSON.parse(response);
+        console.log(response);
 
         if (response.success) {
           var project = `
@@ -60,6 +61,7 @@ $('document').ready(function () {
           $(project).hide().appendTo("#sortable").slideDown();
         } else {
           console.error('An error occured when creating a new project');
+          console.error(response["error"]);
         }
       });
 
