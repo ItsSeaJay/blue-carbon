@@ -1,4 +1,9 @@
 var request;
+var project = {
+  new: function (title, subtitle) {
+
+  }
+};
 
 $('document').ready(function () {
   $('#details').submit(function (event) {
@@ -28,28 +33,34 @@ $('document').ready(function () {
       });
 
       request.done(function (response, status, jqXHR) {
-        var project = `
-          <li class="alert alert-dark">
-            <!-- Left Side -->
-            ` + title + `
-            <!-- Right Side -->
-            <div class="float-right">
-              <!-- Edit -->
-              <a class="btn btn-sm btn-primary" href="edit.php?title=` +
-              uri +
-              `" role="inputs"><span class="oi oi-pencil"></span>&nbsp;Edit</a>
-              <!-- Delete -->
-              <inputs class="btn btn-sm btn-danger" type="inputs" name="inputs">
-                <span class="oi oi-trash"></span>
-                Delete
-              </inputs>
-            </div>
-          </li>
-        `;
+        response = JSON.parse(response);
 
-        console.log(response);
-        $(modal).modal('hide');
-        $(project).hide().appendTo("#sortable").slideDown();
+        if (response.success) {
+          var project = `
+            <li class="alert alert-dark">
+              <!-- Left Side -->
+              ` + title + `
+              <!-- Right Side -->
+              <div class="float-right">
+                <!-- Edit -->
+                <a class="btn btn-sm btn-primary" href="edit.php?title=` +
+                encodeURI(uri) +
+                `" role="inputs"><span class="oi oi-pencil"></span>&nbsp;Edit</a>
+                <!-- Delete -->
+                <inputs class="btn btn-sm btn-danger" type="inputs" name="inputs">
+                  <span class="oi oi-trash"></span>
+                  Delete
+                </inputs>
+              </div>
+            </li>
+          `;
+
+          console.log(response);
+          $(modal).modal('hide');
+          $(project).hide().appendTo("#sortable").slideDown();
+        } else {
+          console.error('An error occured when creating a new project');
+        }
       });
 
       request.fail(function (jqXHR, status, error) {
@@ -64,7 +75,7 @@ $('document').ready(function () {
         inputs.prop('disabled', false);
       });
     } else {
-      $('#b-title').slideDown();
+      $('#blank-title').slideDown();
     }
   });
 });

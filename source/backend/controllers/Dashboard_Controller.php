@@ -25,7 +25,7 @@
         'message' => 'Unspecified error'
       );
 
-      $query = "INSERT INTO `projects` (`id`, `title`, `subtitle`, `initiative`, `description`, `thumbnail`) VALUES (NULL, ?, '?', '', 'No description provided.', 'http://via.placeholder.com/640x480');";
+      $query = "INSERT INTO `projects` (`id`, `title`, `subtitle`, `initiative`, `description`, `thumbnail`) VALUES (NULL, ?, ?, '', '', 'http://via.placeholder.com/640x480')";
 
       if (isset($_POST))
       {
@@ -34,6 +34,9 @@
 
         $GLOBALS['database']->prepared_statement($query, array($title, $subtitle));
       }
+
+      // Send back the AJAX response to Javascript
+      echo json_encode($response) ?? '';
     }
 
     public function edit_project()
