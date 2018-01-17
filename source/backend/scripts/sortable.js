@@ -5,6 +5,7 @@ $(function() {
     axis: 'y',
     containment: 'parent',
     tolerance: 'pointer',
+    revert: true,
     stop: function (e, ui) {
       // Abort any pending request
       if (request) {
