@@ -27,24 +27,37 @@
 
       if (isset($_POST))
       {
-        $title = filter_var($_POST['title'], FILTER_SANITIZE_STRING);
-        $subtitle = filter_var($_POST['subtitle'], FILTER_SANITIZE_STRING);
-
-        $query = "INSERT INTO `projects` (`id`, `title`, `subtitle`, `initiative`, `description`, `thumbnail`) VALUES (NULL, ?, ?, '0', 'No description provided', 'http://via.placeholder.com/640x480');";
-
-        $statement = $GLOBALS['database']->prepared_statement($query, array($title, $subtitle));
-        $project = $statement->fetchObject();
-
-        if ($project)
+        if (isset($_POST['title']) && isset($_POST['subtitle']))
         {
-          $response['success'] = true;
-          $response['message'] = 'Database record inserted successfully';
+          $title = filter_var($_POST['title'], FILTER_SANITIZE_STRING);
+          $subtitle = filter_var($_POST['subtitle'], FILTER_SANITIZE_STRING);
+
+          $query = "INSERT INTO `projects` (`id`, `title`, `subtitle`, `initiative`, `description`, `thumbnail`) VALUES (NULL, ?, ?, '', 'No description provided.', 'http://via.placeholder.com/640x480');";
+
+          $statement = $GLOBALS['database']->prepared_statement($query, array($title, $subtitle));
+          $project = $statement->fetchObject();
+
+          if ($project)
+          {
+            $response['success'] = true;
+            $response['message'] = 'Database record inserted successfully';
+          }
+          else
+          {
+            $response['success'] = false;
+            $response['message'] = 'Failed to insert new project into database';
+          }
         }
         else
         {
           $response['success'] = false;
-          $response['message'] = 'Failed to insert new project into database';
+          $response['message'] = 'Title and subtitle have not been posted';
         }
+      }
+      else
+      {
+        $response['success'] = false;
+        $response['message'] = '$_POST superglobal unset';
       }
 
       // Send back the AJAX response to Javascript regardless of what happened

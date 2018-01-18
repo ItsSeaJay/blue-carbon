@@ -57,7 +57,7 @@ $('document').ready(function () {
           $(modal).modal('hide');
           $(project).hide().appendTo("#sortable").slideDown();
         } else {
-          // console.error(response['error']);
+          console.error(response['error']);
         }
       });
 
