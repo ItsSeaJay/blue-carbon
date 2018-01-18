@@ -4,7 +4,6 @@ var login = {
   request: function (form) {
     // Let's select and cache all the fields
     var inputs = form.find("input, select, button, textarea");
-
     var serializedData = form.serialize();
 
     // Let's disable the inputs for the duration of the Ajax request.

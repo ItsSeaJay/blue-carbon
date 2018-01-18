@@ -30,18 +30,26 @@
         $title = filter_var($_POST['title'], FILTER_SANITIZE_STRING);
         $subtitle = filter_var($_POST['subtitle'], FILTER_SANITIZE_STRING);
 
-        // Then proceed to insert that value into the database
-        $query = "INSERT INTO `projects` (`title`, `subtitle`, `initiative`, `description`, `thumbnail`) VALUES (?, ?, 'No description provided', '', 'http://via.placeholder.com/640x480')";
+        $query = "INSERT INTO `projects` (`id`, `title`, `subtitle`, `initiative`, `description`, `thumbnail`) VALUES (NULL, ?, ?, '0', 'No description provided', 'http://via.placeholder.com/640x480');";
 
-        $GLOBALS['database']->prepared_statement($query, array($title, $subtitle));
+        $statement = $GLOBALS['database']->prepared_statement($query, array($title, $subtitle));
+        $project = $statement->fetchObject();
 
-        $response['success'] = true;
-        $response['message'] = 'Database record inserted successfully';
+        if ($project)
+        {
+          $response['success'] = true;
+          $response['message'] = 'Database record inserted successfully';
+        }
+        else
+        {
+          $response['success'] = false;
+          $response['message'] = 'Failed to insert new project into database';
+        }
       }
 
       // Send back the AJAX response to Javascript regardless of what happened
       $json = json_encode($response);
-      echo $json ?? '';
+      echo $json;
     }
 
     public function edit_project()

@@ -1,7 +1,7 @@
 var request;
 var project = {
-  new: function (title, subtitle) {
-
+  new: function (form) {
+    // TODO: Store request as a function
   }
 };
 
@@ -31,7 +31,6 @@ $('document').ready(function () {
       });
 
       request.done(function (response, status, jqXHR) {
-        console.log(response);
         response = JSON.parse(response);
         console.log(response);
 
@@ -55,12 +54,10 @@ $('document').ready(function () {
             </li>
           `;
 
-          console.log(response);
           $(modal).modal('hide');
           $(project).hide().appendTo("#sortable").slideDown();
         } else {
-          console.error('An error occured when creating a new project');
-          console.error(response["error"]);
+          // console.error(response['error']);
         }
       });
 
