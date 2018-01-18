@@ -12,8 +12,6 @@ $('document').ready(function () {
     var title = form.find('input[name="title"]').val();
     var uri = encodeURIComponent(title);
 
-    console.log(title);
-
     event.preventDefault();
 
     if (title.length > 0) {
@@ -33,6 +31,7 @@ $('document').ready(function () {
       });
 
       request.done(function (response, status, jqXHR) {
+        console.log(response);
         response = JSON.parse(response);
         console.log(response);
 

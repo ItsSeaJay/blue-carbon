@@ -142,7 +142,8 @@
           </div>
           <div class="modal-body">
             <p>
-              A project is any single piece of work that you want an employer to see. Make it a good one!
+              A project is any single piece of work that you want an employer to see. </br>
+              Make it a good one!
             </p>
             <form id="details" class="form">
               <!-- title -->

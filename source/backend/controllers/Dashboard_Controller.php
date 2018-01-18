@@ -30,28 +30,18 @@
         $title = filter_var($_POST['title'], FILTER_SANITIZE_STRING);
         $subtitle = filter_var($_POST['subtitle'], FILTER_SANITIZE_STRING);
 
-        // Check that the project does not already exist
-        $query = "SELECT `title` FROM `projects` WHERE `title` = ?";
-        $statement = $GLOBALS['database']->prepared_statement($query, array($title));
-        $row = $statement->fetchObject() ?? '';
+        // Then proceed to insert that value into the database
+        $query = "INSERT INTO `projects` (`title`, `subtitle`, `initiative`, `description`, `thumbnail`) VALUES (?, ?, 'No description provided', '', 'http://via.placeholder.com/640x480')";
 
-        if ($row->total === 0) {
-          // Then proceed to insert that value into the database
-          $query = "INSERT INTO `projects` (`id`, `title`, `subtitle`, `initiative`, `description`, `thumbnail`) VALUES (NULL, ?, ?, 'No description provided', '', 'http://via.placeholder.com/640x480')";
+        $GLOBALS['database']->prepared_statement($query, array($title, $subtitle));
 
-          $GLOBALS['database']->prepared_statement($query, array($title, $subtitle));
-
-          $response['success'] = true;
-          $response['message'] = 'Database record inserted successfully';
-        } else {
-          // That project already exists in the database
-          $response['success'] = false;
-          $response['message'] = 'Error: entered title already exists.';
-        }
+        $response['success'] = true;
+        $response['message'] = 'Database record inserted successfully';
       }
 
       // Send back the AJAX response to Javascript regardless of what happened
-      echo json_encode($response) ?? '';
+      $json = json_encode($response);
+      echo $json ?? '';
     }
 
     public function edit_project()
