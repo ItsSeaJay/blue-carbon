@@ -32,20 +32,24 @@
           $title = filter_var($_POST['title'], FILTER_SANITIZE_STRING);
           $subtitle = filter_var($_POST['subtitle'], FILTER_SANITIZE_STRING);
 
-          $query = "INSERT INTO `projects` (`id`, `title`, `subtitle`, `initiative`, `description`, `thumbnail`) VALUES (NULL, ?, ?, '', 'No description provided.', 'http://via.placeholder.com/640x480');";
-
-          $statement = $GLOBALS['database']->prepared_statement($query, array($title, $subtitle));
+          $query = "SELECT COUNT(*) AS `total` FROM projects WHERE title = ?";
+          $statement = $GLOBALS['database']->prepared_statement($query, array($title));
           $project = $statement->fetchObject();
 
-          if ($project)
+          if ($project->total == 0)
           {
+            $query = "INSERT INTO `projects` (`id`, `title`, `subtitle`, `initiative`, `description`, `thumbnail`) VALUES (NULL, ?, ?, '', 'No description provided.', 'http://via.placeholder.com/640x480');";
+
+            $GLOBALS['database']->prepared_statement($query, array($title, $subtitle));
+
             $response['success'] = true;
             $response['message'] = 'Database record inserted successfully';
           }
           else
           {
+            // A project with that title already exists
             $response['success'] = false;
-            $response['message'] = 'Failed to insert new project into database';
+            $response['message'] = 'A project with that title already exists';
           }
         }
         else
