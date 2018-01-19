@@ -87,5 +87,10 @@
         $GLOBALS['database']->prepared_statement($query, $data);
       }
     }
+
+    public function delete_project($title)
+    {
+      # code...
+    }
   }
 ?>

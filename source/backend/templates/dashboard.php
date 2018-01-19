@@ -102,11 +102,13 @@
                 echo '&nbsp;';
 
                 // Delete button
-                echo '<button class="btn btn-sm btn-danger">';
+                echo '<a class="btn btn-sm btn-danger" href="dashboard.php?title=';
+                echo urlencode($project['title']);
+                echo '" data-toggle="modal" data-target="#delete-project">';
                 echo '<span class="oi oi-trash"></span>';
                 echo '&nbsp;';
                 echo 'Delete';
-                echo '</button>';
+                echo '</a>';
                 echo '</div>';
                 echo '</li>';
               }
@@ -179,6 +181,36 @@
               <p>
                 You can always change these details later.
               </p>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">Create</button>
+          </form>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Delete Project -->
+    <div id="delete-project" class="modal fade">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Delete Project</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <h6>Are you sure?</h6>
+            <p>
+              Once deleted, you cannot get
+              <?php echo $_GET['title'] ?? 'the project'; ?>
+              back. All links, details and descriptive information will be lost.
+            </p>
+
+            <form class="form" action="">
+
+            </form>
           </div>
           <div class="modal-footer">
             <button type="submit" class="btn btn-primary">Create</button>
