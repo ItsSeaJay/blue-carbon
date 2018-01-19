@@ -26,8 +26,9 @@
     <!-- Bootstrap JS -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
     <!-- New Project -->
-    <script type="text/javascript" src="scripts/new-project.js">
-    </script>
+    <script type="text/javascript" src="scripts/new-project.js"></script>
+    <!-- Delete Project -->
+    <script type="text/javascript" src="scripts/delete-project.js"></script>
   </head>
   <body>
     <!-- Header -->
@@ -102,9 +103,8 @@
                 echo '&nbsp;';
 
                 // Delete button
-                echo '<a class="btn btn-sm btn-danger" href="dashboard.php" ';
-                echo 'data-title="' . $project['title'] . '" ';
-                echo 'data-toggle="modal" data-target="#delete-project">';
+                echo '<a class="btn btn-sm btn-danger btn-delete" href="dashboard.php';
+                echo '?title=' . urlencode($project['title']) . '">';
                 echo '<span class="oi oi-trash"></span>';
                 echo '&nbsp;';
                 echo 'Delete';
