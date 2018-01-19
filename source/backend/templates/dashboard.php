@@ -103,8 +103,9 @@
                 echo '&nbsp;';
 
                 // Delete button
-                echo '<a class="btn btn-sm btn-danger btn-delete" href="dashboard.php';
-                echo '?title=' . urlencode($project['title']) . '">';
+                echo '<a class="btn btn-sm btn-danger btn-delete-project" href="dashboard.php';
+                echo '?title=' . urlencode($project['title']) . '" ';
+                echo 'data-title="' . $project['title'] . '">';
                 echo '<span class="oi oi-trash"></span>';
                 echo '&nbsp;';
                 echo 'Delete';
