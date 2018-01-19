@@ -209,7 +209,7 @@
               back. All links, details and descriptive information will be lost.
             </p>
 
-            <form class="form" action="">
+            <form id="delete-form" class="form" action="">
               <input class="form-control" type="text" name="title" placeholder="Title">
           </div>
           <div class="modal-footer">
