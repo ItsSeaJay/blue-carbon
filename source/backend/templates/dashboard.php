@@ -102,9 +102,9 @@
                 echo '&nbsp;';
 
                 // Delete button
-                echo '<a class="btn btn-sm btn-danger" href="dashboard.php?title=';
-                echo urlencode($project['title']);
-                echo '" data-toggle="modal" data-target="#delete-project">';
+                echo '<a class="btn btn-sm btn-danger" href="dashboard.php" ';
+                echo 'data-title="' . $project['title'] . '" ';
+                echo 'data-toggle="modal" data-target="#delete-project">';
                 echo '<span class="oi oi-trash"></span>';
                 echo '&nbsp;';
                 echo 'Delete';
@@ -209,13 +209,16 @@
             </p>
 
             <form class="form" action="">
-
-            </form>
+              <input class="form-control" type="text" name="title" placeholder="Title">
           </div>
           <div class="modal-footer">
-            <button type="submit" class="btn btn-primary">Create</button>
+            <button type="submit" class="btn btn-danger">
+              Yes, I'm Sure
+            </button>
           </form>
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">
+              Cancel
+            </button>
           </div>
         </div>
       </div>
