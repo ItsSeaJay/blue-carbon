@@ -33,7 +33,7 @@
           $subtitle = filter_var($_POST['subtitle'], FILTER_SANITIZE_STRING);
 
           // First, check if the project with the entered title exists
-          $query = "SELECT COUNT(*) AS `total` FROM projects WHERE title = ?";
+          $query = "SELECT COUNT(*) AS `total` FROM `projects` WHERE title = ?";
           $statement = $GLOBALS['database']->prepared_statement($query, array($title));
           $project = $statement->fetchObject();
 

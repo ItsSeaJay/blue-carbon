@@ -36,24 +36,27 @@ $('document').ready(function () {
 
         if (response.success) {
           var project = `
-            <li class="alert alert-dark">
-              <!-- Left Side -->
-              ` + title + `
-              <!-- Right Side -->
-              <div class="float-right">
-                <!-- Edit -->
-                <a class="btn btn-sm btn-primary" href="edit.php?title=` +
-                encodeURI(uri) +
-                `" role="inputs"><span class="oi oi-pencil"></span>&nbsp;Edit</a>
-                <!-- Delete -->
-                <a class="btn btn-sm btn-danger btn-delete-project"`
-                +
-                ` href="dashboard.php" data-title="` +
-                title +
-                `">
-              </div>
-            </li>
-          `;
+            <li class="alert alert-dark">` +
+            title +
+            `<div class="float-right">
+              <a class="btn btn-sm btn-primary" href="edit.php?title=` +
+            encodeURI(title) +
+            `" role="button">
+                <span class="oi oi-pencil"></span>
+                &nbsp;
+                Edit
+              </a>
+            &nbsp;
+            <a class="btn btn-sm btn-danger btn-delete-project"` +
+            ` href="dashboard.php" data-title="` +
+            title +
+            `">
+              <span class="oi oi-trash"></span>
+              &nbsp;
+              Delete
+            </a>
+            </div>
+            </li>`;
 
           $(modal).modal('hide');
           $(project).hide().appendTo("#sortable").slideDown();

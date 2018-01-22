@@ -81,13 +81,11 @@
           <!-- Projects List (Sortable) -->
           <ul id="sortable" style="list-style: none;">
             <?php
-              // $this->echo_project_sortable();
-
               // Output existing projects
               foreach ($projects as $project)
               {
                 // Single thumbnail
-                echo '<li class="alert alert-dark" data-id=' . $project['id'] . '>';
+                echo '<li class="alert alert-dark" >';
                 echo $project['title'];
                 echo '<div class="float-right">';
 
@@ -214,7 +212,7 @@
 
             <form id="delete-form" class="form" action="">
               <input class="form-control" type="text" name="title" placeholder="Title">
-              
+
               <!-- Errors -->
               <small id="blank-title-delete" class="invalid-feedback">
                 <em>
