@@ -98,7 +98,7 @@
 
       if (isset($_POST)) {
         if (isset($_POST['title'])) {
-          $title = filter_var($_POST['title'], FILTER_SANITIZE_STRING);
+          $title = $_POST['title'];
 
           // Check if the project we're trying to delete matches one in the database
           $query = "SELECT COUNT(*) AS `total` FROM projects WHERE title = ?";
