@@ -14,6 +14,8 @@ $('document').ready(function () {
       event.preventDefault();
       modal.modal('show');
       span.html(target);
+      $('#blank-title-delete').fadeOut();
+      $('#nonmatching-title-delete').fadeOut();
 
       $(form.submit(function (event) {
         event.preventDefault();
@@ -21,14 +23,16 @@ $('document').ready(function () {
         var title = form.find('input[name="title"]').val();
         var uri = encodeURIComponent(title);
 
+        // Verify the title the user entered
         if (title.length > 0) {
           if (title === target) {
             modal.modal('hide');
+            title = "";
           } else {
-            console.error('Title doesn\'t match!');
+            $('#nonmatching-title-delete').slideDown();
           }
         } else {
-          console.error('Title cannot be blank!');
+          $('#blank-title-delete').slideDown();
         }
       }));
     });

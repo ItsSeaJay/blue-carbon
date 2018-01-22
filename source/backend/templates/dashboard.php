@@ -205,12 +205,28 @@
             <h6>Are you sure?</h6>
             <p>
               Once deleted, you cannot get
-              <span id="title-span"></span>
+              <strong><span id="title-span"></span></strong>
               back. All links, details and descriptive information will be lost.
+            </p>
+            <p>
+              Please type the title of the project to confirm (case sensitive).
             </p>
 
             <form id="delete-form" class="form" action="">
               <input class="form-control" type="text" name="title" placeholder="Title">
+              
+              <!-- Errors -->
+              <small id="blank-title-delete" class="invalid-feedback">
+                <em>
+                  The title field cannot be blank.
+                </em>
+              </small>
+              </br>
+              <small id="nonmatching-title-delete" class="invalid-feedback">
+                <em>
+                  The title must match the project you want to delete.
+                </em>
+              </small>
           </div>
           <div class="modal-footer">
             <button type="submit" class="btn btn-danger">
