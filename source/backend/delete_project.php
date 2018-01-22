@@ -7,7 +7,4 @@
   $dashboard_controller = new Dashboard_Controller($dashboard_model);
 
   $dashboard_controller->delete_project();
-
-  header('Location: dashboard.php');
-  exit();
 ?>
