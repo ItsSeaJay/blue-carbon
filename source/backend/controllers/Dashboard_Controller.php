@@ -32,10 +32,12 @@
           $title = filter_var($_POST['title'], FILTER_SANITIZE_STRING);
           $subtitle = filter_var($_POST['subtitle'], FILTER_SANITIZE_STRING);
 
+          // First, check if the project with the entered title exists
           $query = "SELECT COUNT(*) AS `total` FROM projects WHERE title = ?";
           $statement = $GLOBALS['database']->prepared_statement($query, array($title));
           $project = $statement->fetchObject();
 
+          // If it doesn't, then we can continue to create it
           if ($project->total == 0)
           {
             $query = "INSERT INTO `projects` (`id`, `title`, `subtitle`, `initiative`, `description`, `thumbnail`) VALUES (NULL, ?, ?, '', 'No description provided.', 'http://via.placeholder.com/640x480');";
@@ -47,7 +49,6 @@
           }
           else
           {
-            // A project with that title already exists
             $response['success'] = false;
             $response['message'] = 'A project with that title already exists';
           }
@@ -88,9 +89,38 @@
       }
     }
 
-    public function delete_project($title)
+    public function delete_project()
     {
-      # code...
+      $response = array(
+        'success' => false,
+        'message' => 'Unspecified error'
+      );
+
+      if (isset($_POST)) {
+        if (isset($_POST['title'])) {
+          $title = filter_var($_POST['title'], FILTER_SANITIZE_STRING);
+
+          // Check if the project we're trying to delete matches one in the database
+          $query = "SELECT COUNT(*) AS `total` FROM projects WHERE title = ?";
+          $statement = $GLOBALS['database']->prepared_statement($query, array($title));
+          $project = $statement->fetchObject();
+
+          if ($project->total > 0) {
+            $query = 'DELETE FROM `projects` WHERE `projects`.`title` = ?';
+            $GLOBALS['database']->prepared_statement($query, array($title));
+
+            $response['success'] = true;
+            $response['message'] = 'Project deleted successfully!';
+          } else {
+            $response['success'] = false;
+            $response['message'] = 'No such project exists.';
+          }
+        }
+      }
+
+      // Send back the AJAX response to Javascript regardless of what happened
+      $json = json_encode($response);
+      echo $json;
     }
   }
 ?>
