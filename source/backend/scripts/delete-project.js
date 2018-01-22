@@ -10,6 +10,7 @@ $('document').ready(function () {
   for (var button = 0; button < buttons.length; button++) {
     $(buttons[button]).click(function (event) {
       var target = this.dataset.title;
+      var node = $(this).parent().parent();
 
       event.preventDefault();
       modal.modal('show');
@@ -47,8 +48,8 @@ $('document').ready(function () {
               console.log(response);
 
               if (response.success) {
-                console.log('You\'re Winner');
                 modal.modal('hide');
+                node.fadeOut();
               } else {
                 console.log(response.message);
               }
