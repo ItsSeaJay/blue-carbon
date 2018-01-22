@@ -205,7 +205,7 @@
             <h6>Are you sure?</h6>
             <p>
               Once deleted, you cannot get
-              <?php echo $_GET['title'] ?? 'the project'; ?>
+              <span id="title-span"></span>
               back. All links, details and descriptive information will be lost.
             </p>
 
