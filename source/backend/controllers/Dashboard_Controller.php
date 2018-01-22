@@ -22,7 +22,8 @@
     {
       $response = array(
         'success' => false,
-        'message' => 'Unspecified error'
+        'message' => 'Unspecified error',
+        'total' => 0
       );
 
       if (isset($_POST))
@@ -40,12 +41,13 @@
           // If it doesn't, then we can continue to create it
           if ($project->total == 0)
           {
-            $query = "INSERT INTO `projects` (`id`, `title`, `subtitle`, `initiative`, `description`, `thumbnail`) VALUES (NULL, ?, ?, '', 'No description provided.', 'http://via.placeholder.com/640x480');";
+            $query = "INSERT INTO `projects` (`title`, `subtitle`, `initiative`, `description`, `thumbnail`) VALUES (?, ?, 'No description provided.', 10, 'http://via.placeholder.com/640x480');";
 
             $GLOBALS['database']->prepared_statement($query, array($title, $subtitle));
 
             $response['success'] = true;
             $response['message'] = 'Database record inserted successfully';
+            $response['total'] = $project->total;
           }
           else
           {

@@ -43,7 +43,6 @@ $('document').ready(function () {
             encodeURI(title) +
             `" role="button">
                 <span class="oi oi-pencil"></span>
-                &nbsp;
                 Edit
               </a>
             &nbsp;
@@ -52,7 +51,6 @@ $('document').ready(function () {
             title +
             `">
               <span class="oi oi-trash"></span>
-              &nbsp;
               Delete
             </a>
             </div>
