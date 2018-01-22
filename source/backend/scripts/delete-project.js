@@ -48,8 +48,9 @@ $('document').ready(function () {
 
               if (response.success) {
                 console.log('You\'re Winner');
+                modal.modal('hide');
               } else {
-                
+                console.log(response.message);
               }
             });
 

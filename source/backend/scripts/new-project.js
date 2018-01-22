@@ -46,10 +46,11 @@ $('document').ready(function () {
                 encodeURI(uri) +
                 `" role="inputs"><span class="oi oi-pencil"></span>&nbsp;Edit</a>
                 <!-- Delete -->
-                <inputs class="btn btn-sm btn-danger" type="inputs" name="inputs">
-                  <span class="oi oi-trash"></span>
-                  Delete
-                </inputs>
+                <a class="btn btn-sm btn-danger btn-delete-project"`
+                +
+                ` href="dashboard.php" data-title="` +
+                title +
+                `">
               </div>
             </li>
           `;
