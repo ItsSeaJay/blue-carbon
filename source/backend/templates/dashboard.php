@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Aquafolio Dashboard</title>
+    <title>Blue Carbon Dashboard</title>
 
     <!-- Styles -->
     <!-- Main -->
@@ -36,7 +36,7 @@
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <!-- Brand -->
         <a class="navbar-brand" href="dashboard.php">
-          <span class="oi oi-droplet"></span>&nbsp;Aquafolio
+          Blue Carbon
         </a>
 
         <!-- Expand Button -->

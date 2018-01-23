@@ -50,8 +50,6 @@ $('document').ready(function () {
               if (response.success) {
                 modal.modal('hide');
                 node.fadeOut();
-              } else {
-                console.log(response.message);
               }
             });
 
