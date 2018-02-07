@@ -93,7 +93,7 @@
             <div class="row">
               <div class="col">
                 <div class="form-group">
-                  <label for="title">
+                  <label for="subtitle">
                     Subtitle
                   </label>
                   <div class="input-group">
@@ -140,6 +140,22 @@
 
                     echo $parsedown->text($project->description);
                   ?>
+                </div>
+              </div>
+            </div>
+            <!-- Initiative -->
+            <div class="row">
+              <div class="col">
+                <div class="form-group">
+                  <label for="initiative">
+                    Initiative
+                  </label>
+                  <div class="input-group">
+                    <div class="input-group-addon">
+                      <span class="oi oi-sort-descending"></span>
+                    </div>
+                    <input class="form-control" type="text" name="initiative" value="<?php echo $project->initiative; ?>" placeholder="Initiative">
+                  </div>
                 </div>
               </div>
             </div>
