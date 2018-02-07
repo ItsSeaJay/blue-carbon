@@ -52,14 +52,25 @@
               else
               {
                 // Assume HTML5 video
-                echo '<video>';
-                echo '<source></source>';
+                echo '<video width="100%" height="auto" controls poster=';
+                echo $project->thumbnail;
+                echo '>';
+                echo '<source src="';
+                echo $project->trailer;
+                echo '" kind="video/mp4">'; // Assume .mp4 MIME type
+                echo 'If you can read this, your browser doesn\'t support HTML5';
+                echo ' video, or the source is broken.';
                 echo '</video>';
               }
             }
             else
             {
-              echo "<p><i>No trailer provided.</i><p>";
+              // Show the thumbnail instead
+              echo '<img width="100%" height="auto" alt=';
+              echo $project->title;
+              echo '" src="';
+              echo $project->thumbnail;
+              echo '">';
             }
           ?>
           <!-- Description -->
