@@ -9,7 +9,7 @@
 
   if (isset($_POST))
   {
-    $clean_html = $purifier->purify($_POST['description']) ?? 'undefined';
+    $clean_html = $purifier->purify($_POST['description']) ?? 'null';
     echo $parsedown->text($clean_html);
   }
 ?>
