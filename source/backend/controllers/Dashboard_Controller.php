@@ -77,7 +77,7 @@
 
     public function edit_project()
     {
-      $query = 'UPDATE `projects` SET `title` = ?, `subtitle` = ?, `description` = ? WHERE `id` = ?';
+      $query = 'UPDATE `projects` SET `title` = ?, `subtitle` = ?, `description` = ?, `initiative` = ? WHERE `id` = ?';
 
       if (isset($_POST))
       {
@@ -87,6 +87,7 @@
           filter_var($_POST['title'], FILTER_SANITIZE_STRING),
           filter_var($_POST['subtitle'], FILTER_SANITIZE_STRING),
           $clean_description, // Filtered by HTML purifier
+          filter_var($_POST['initiative'], FILTER_SANITIZE_NUMBER_INT),
           $_POST['id'] // We don't filter this, because the user doesn't input it
         );
 

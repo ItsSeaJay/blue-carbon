@@ -143,9 +143,9 @@
                 </div>
               </div>
             </div>
-            <!-- Initiative -->
             <div class="row">
-              <div class="col">
+              <!-- Initiative -->
+              <div class="col-auto">
                 <div class="form-group">
                   <label for="initiative">
                     Initiative
@@ -154,8 +154,22 @@
                     <div class="input-group-addon">
                       <span class="oi oi-sort-descending"></span>
                     </div>
-                    <input class="form-control" type="text" name="initiative" value="<?php echo $project->initiative; ?>" placeholder="Initiative">
+                    <input class="form-control" type="number" name="initiative" value="<?php echo $project->initiative; ?>" placeholder="Initiative" maxlength="16">
                   </div>
+                </div>
+              </div>
+              <!-- Thumbnail -->
+              <div class="col-auto">
+                <div class="form-group">
+                  <label for="initiative">
+                    Thumbnail
+                  </label>
+                  <!-- <div class="input-group">
+                    <div class="input-group-addon">
+                      <span class="oi oi-sort-descending"></span>
+                    </div>
+                    <input class="form-control" type="number" name="initiative" value="<?php //echo $project->initiative; ?>" placeholder="Initiative" maxlength="16">
+                  </div> -->
                 </div>
               </div>
             </div>
