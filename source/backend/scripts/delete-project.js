@@ -50,6 +50,7 @@ $('document').ready(function () {
               if (response.success) {
                 modal.modal('hide');
                 node.fadeOut();
+                form.trigger('reset');
               }
             });
 

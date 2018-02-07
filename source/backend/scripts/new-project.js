@@ -58,6 +58,8 @@ $('document').ready(function () {
 
           $(modal).modal('hide');
           $(project).hide().appendTo("#sortable").slideDown();
+
+          form.trigger('reset');
         } else {
           // The request failed
           $('#unique-title').slideDown();
