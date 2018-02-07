@@ -182,6 +182,10 @@
                   &nbsp;
                   Save Changes
                 </button>
+                <button class="btn btn-warning" type="reset" name="reset">
+                  <span class="oi oi-action-undo"></span>
+                  Reset Changes
+                </button>
                 <!-- Button to trigger cancel modal -->
                 <a href="#cancel-modal" role="button" class="btn btn-danger" data-toggle="modal">
                   <span class="oi oi-circle-x"></span>
@@ -193,6 +197,10 @@
           </form>
         </div>
       </section>
+    </div>
+
+    <!-- Padding -->
+    <div style="padding-bottom: 64px;">   
     </div>
 
     <!-- Modals -->
