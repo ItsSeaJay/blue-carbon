@@ -144,18 +144,22 @@
               </div>
             </div>
             <!-- Buttons -->
-            <!-- Button to trigger cancel modal -->
-            <!-- Button to Save Changes -->
-            <button class="btn btn-success" type="submit" name="save">
-              <span class="oi oi-circle-check"></span>
-              &nbsp;
-              Save Changes
-            </button>
-            <a href="#cancel-modal" role="button" class="btn btn-danger" data-toggle="modal">
-              <span class="oi oi-circle-x"></span>
-              &nbsp;
-              Discard Changes
-            </a>
+            <div class="row">
+              <div class="col-md">
+                <!-- Button to Save Changes -->
+                <button class="btn btn-success" type="submit" name="save">
+                  <span class="oi oi-circle-check"></span>
+                  &nbsp;
+                  Save Changes
+                </button>
+                <!-- Button to trigger cancel modal -->
+                <a href="#cancel-modal" role="button" class="btn btn-danger" data-toggle="modal">
+                  <span class="oi oi-circle-x"></span>
+                  &nbsp;
+                  Discard Changes
+                </a>
+              </div>
+            </div>
           </form>
         </div>
       </section>
