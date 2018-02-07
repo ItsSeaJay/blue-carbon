@@ -159,17 +159,17 @@
                 </div>
               </div>
               <!-- Thumbnail -->
-              <div class="col-auto">
+              <div class="col">
                 <div class="form-group">
                   <label for="initiative">
                     Thumbnail
                   </label>
-                  <!-- <div class="input-group">
+                  <div class="input-group">
                     <div class="input-group-addon">
-                      <span class="oi oi-sort-descending"></span>
+                      <span class="oi oi-image"></span>
                     </div>
-                    <input class="form-control" type="number" name="initiative" value="<?php //echo $project->initiative; ?>" placeholder="Initiative" maxlength="16">
-                  </div> -->
+                    <input class="form-control" type="text" name="thumbnail" value="<?php echo $project->thumbnail; ?>" placeholder="Thumbnail">
+                  </div>
                 </div>
               </div>
             </div>
