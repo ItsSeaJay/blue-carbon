@@ -36,9 +36,32 @@
           <h2><?php echo $project->subtitle; ?></h2>
         </div>
         <div class="col-lg-6">
-          <!-- Thumbnail -->
-          <img class="responsive" src=<?php echo '"' . $project->thumbnail . '"'; ?> alt=<?php echo '"' . $project->title . ' Thumbnail"'; ?>>
+          <!-- Trailer -->
+          <?php
+            if (strlen($project->trailer) > 0)
+            {
+              // Check if the trailer provided is a YouTube video embed code
+              $embed_signifier = "https://www.youtube.com/embed/";
 
+              if (substr($project->trailer, 0, strlen($embed_signifier)) === $embed_signifier)
+              {
+                echo '<iframe width="100%" height="360" src="';
+                echo $project->trailer;
+                echo '" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
+              }
+              else
+              {
+                // Assume HTML5 video
+                echo '<video>';
+                echo '<source></source>';
+                echo '</video>';
+              }
+            }
+            else
+            {
+              echo "<p><i>No trailer provided.</i><p>";
+            }
+          ?>
           <!-- Description -->
           <p>
             <?php

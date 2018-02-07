@@ -173,6 +173,22 @@
                 </div>
               </div>
             </div>
+            <div class="row">
+              <!-- Trailer -->
+              <div class="col">
+                <div class="form-group">
+                  <label for="initiative">
+                    Trailer
+                  </label>
+                  <div class="input-group">
+                    <div class="input-group-addon">
+                      <span class="oi oi-video"></span>
+                    </div>
+                    <input class="form-control" type="text" name="trailer" value="<?php echo $project->trailer; ?>" placeholder="Trailer">
+                  </div>
+                </div>
+              </div>
+            </div>
             <!-- Buttons -->
             <div class="row">
               <div class="col-md">
