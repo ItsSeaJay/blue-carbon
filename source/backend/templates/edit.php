@@ -51,15 +51,6 @@
           <!-- Right Side -->
           <ul class="navbar-nav">
             <li class="nav-item">
-              <div class="nav-link">
-                <span>Mode</span>
-                <select>
-                  <option>Release</option>
-                  <option>Debug</option>
-                </select>
-              </div>
-            </li>
-            <li class="nav-item">
               <a class="nav-link" href="#logout-modal" data-toggle="modal">
                 <span class="oi oi-account-logout"></span>
                 &nbsp;
