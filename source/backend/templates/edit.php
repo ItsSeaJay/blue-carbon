@@ -33,7 +33,7 @@
     <header>
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <!-- Brand -->
-        <a class="navbar-brand" href="dashboard.php">
+        <a class="navbar-brand" href="#cancel-modal" data-toggle="modal">
           Blue Carbon
         </a>
 
@@ -200,7 +200,7 @@
     </div>
 
     <!-- Padding -->
-    <div style="padding-bottom: 64px;">   
+    <div style="padding-bottom: 64px;">
     </div>
 
     <!-- Modals -->
