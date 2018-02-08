@@ -70,6 +70,9 @@
       </nav>
     </header>
 
+    <!-- Padding -->
+    <div style="padding-top: 64px;"></div>
+
     <!-- Content -->
     <div class="container">
       <!-- Title -->
@@ -179,7 +182,11 @@
                     <div class="input-group-addon">
                       <span class="oi oi-image"></span>
                     </div>
-                    <input class="form-control" type="text" name="thumbnail" value="<?php echo $project->thumbnail; ?>" placeholder="Thumbnail">
+                    <input
+                      class="form-control"
+                      type="text" name="thumbnail"
+                      value="<?php echo $project->thumbnail; ?>"
+                      placeholder="Thumbnail">
                   </div>
                 </div>
               </div>
@@ -226,7 +233,7 @@
       </section>
     </div>
 
-    <!-- Padding -->
+    <!-- Bottom Padding -->
     <div style="padding-bottom: 64px;"></div>
 
     <!-- Modals -->
