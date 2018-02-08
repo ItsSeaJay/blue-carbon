@@ -4,9 +4,10 @@
   /**
    * Gets details for a project
    */
+
   class Detail_Model
   {
-    private $template
+    private $template;
 
     function __construct($template)
     {
@@ -15,12 +16,12 @@
 
     public function get_template()
     {
-      return $this->template();
+      return $this->template;
     }
 
-    public function get_details()
+    public function get_details($project)
     {
-      $query = 'SELECT * FROM `details`';
+      $query = 'SELECT * FROM `details` WHERE `project` = ' . $project;
       $statement = $GLOBALS['database']->prepared_statement($query, array());
 
       return $statement->fetchAll();

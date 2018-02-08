@@ -6,10 +6,21 @@
    */
   class Detail_Controller
   {
-    function __construct(argument)
+    private $model;
+
+    function __construct($model)
     {
-      # code...
+      $this->model = $model;
+    }
+
+    public function get_model($model)
+    {
+      return $this->model;
+    }
+
+    public function update_details($project)
+    {
+      
     }
   }
-
 ?>
