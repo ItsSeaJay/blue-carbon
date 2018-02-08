@@ -17,24 +17,51 @@
     {
       $details = $this->model->get_details($project);
 
+      echo '<div id="details">';
+      echo '<a class="btn btn-success" role="button" id="new-detail" href="">';
+      echo '<span class="oi oi-plus"></span>';
+      echo '&nbsp; ';
+      echo 'Add Detail';
+      echo '</a>';
+
       foreach ($details as $detail)
       {
+        echo '<hr>';
+
         echo '<div class="row">';
-        echo '<div class="col-auto">';
+
+        // Delete button
+        echo '<a href="">';
+        echo '<span class="oi oi-x"></span>';
+        echo '</a>';
+
+        echo '<div class="col">';
         echo '<div class="input-group">';
+
+        // Header Field Icon
+        echo '<div class="input-group-addon">';
+        echo '<span class="oi oi-header"></span>';
+        echo '</div>';
 
         // Detail Header
         echo '<input class="form-control"';
         echo ' style="font-weight: bold;"';
         echo ' type=text';
         echo ' placeholder="header"';
-        echo ' value=';
+        echo ' value="';
         echo $detail['header'];
-        echo '>';
+        echo '">';
         echo '</input>';
 
         echo '</div>';
+        echo '</div>';
         echo '<div class="col">';
+        echo '<div class="input-group">';
+
+        // Content Field Icon
+        echo '<div class="input-group-addon">';
+        echo '<span class="oi oi-ellipses"></span>';
+        echo '</div>';
 
         // Detail Content
         echo '<input class="form-control" type=text placeholder="header"';
@@ -44,6 +71,8 @@
         echo '</input>';
 
         echo '</div>';
+        echo '</div>';
+
         echo '</div>';
         echo '</div>';
       }

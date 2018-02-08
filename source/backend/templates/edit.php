@@ -38,6 +38,10 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
     <!-- Preview Description -->
     <script src="scripts/preview-description.js" charset="utf-8"></script>
+    <!-- New Detail -->
+    <script src="scripts/new-detail.js"></script>
+    <!-- Delete Detail -->
+    <script src="scripts/delete-detail.js"></script>
   </head>
   <body>
     <!-- Header -->
@@ -219,7 +223,7 @@
                 </div>
               </div>
             </div>
-            
+
             <!-- Details -->
             <div class="row">
               <div class="col-md">
