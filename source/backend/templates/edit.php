@@ -51,6 +51,14 @@
           <!-- Right Side -->
           <ul class="navbar-nav">
             <li class="nav-item">
+              <a class="nav-link"
+                href="../project.php?title=<?php echo urlencode($project->title); ?>"
+                target="_blank">
+                <span class="oi oi-eye"></span>
+                Show
+              </a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="#logout-modal" data-toggle="modal">
                 <span class="oi oi-account-logout"></span>
                 &nbsp;
@@ -66,6 +74,9 @@
     <div class="container">
       <!-- Title -->
       <h1>Edit <?php echo $project->title; ?></h1>
+
+      <hr>
+
       <!-- Edit Form -->
       <section class="row">
         <!-- Form Body -->
@@ -216,8 +227,7 @@
     </div>
 
     <!-- Padding -->
-    <div style="padding-bottom: 64px;">
-    </div>
+    <div style="padding-bottom: 64px;"></div>
 
     <!-- Modals -->
     <!-- Cancel Modal -->
