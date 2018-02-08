@@ -47,7 +47,7 @@
           // Output single thumbnail
           echo '<div class="thumbnail col-md">';
           echo '<a href="project.php?title=' . urlencode($project['title']) . '">';
-          echo '<img alt="' . $project['title'] . ' Project Thumbnail" class="responsive" src="' . $project['thumbnail'] . '">';
+          echo '<img alt="' . $project['title'] . ' Project Thumbnail" class="responsive thumbnail-img" src="' . $project['thumbnail'] . '">';
           echo '<h1>' . $project['title'] . '</h1>';
           echo '<p>' . $project['subtitle'] . '</p>';
           echo '</a>';
@@ -55,6 +55,8 @@
 
           $project_count++;
         }
+
+        echo '</div>';
       ?>
     </div>
     <footer class="container">

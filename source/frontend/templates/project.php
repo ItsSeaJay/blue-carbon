@@ -34,6 +34,27 @@
           <h1><?php echo $project->title; ?></h1>
           <!-- Subtitle -->
           <h2><?php echo $project->subtitle; ?></h2>
+
+          <hr>
+
+          <!-- Details -->
+          <ul>
+            <?php
+              $query = 'SELECT * FROM `details` WHERE `project` = ' . $project->id;
+              $statement = $GLOBALS['database']->prepared_statement($query, array());
+
+              while ($detail = $statement->fetchObject())
+              {
+                echo '<li>';
+                echo '<strong>';
+                echo $detail->header;
+                echo ' ';
+                echo '</strong>';
+                echo $detail->detail;
+                echo '</li>';
+              }
+            ?>
+          </ul>
         </div>
         <div class="col-lg-6">
           <!-- Trailer -->

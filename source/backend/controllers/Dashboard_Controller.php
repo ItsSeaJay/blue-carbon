@@ -77,7 +77,9 @@
 
     public function edit_project()
     {
-      $query = 'UPDATE `projects` SET `title` = ?, `subtitle` = ?, `description` = ?, `initiative` = ?, `thumbnail` = ?, `trailer` = ? WHERE `id` = ?';
+      $query = 'UPDATE `projects` SET `title` = ?, `subtitle` = ?,' .
+        ' `description` = ?, `initiative` = ?, `thumbnail` = ?,' .
+        ' `trailer` = ? WHERE `id` = ?';
 
       if (isset($_POST))
       {
