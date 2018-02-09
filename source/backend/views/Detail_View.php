@@ -18,9 +18,12 @@
       $details = $this->model->get_details($project);
 
       echo '<div id="details">';
-      echo '<a class="btn btn-success" role="button" id="new-detail" href="">';
-      echo '<span class="oi oi-plus"></span>';
-      echo '&nbsp; ';
+
+      // New project Button
+      echo '<a class="btn btn-success" role="button" href="">';
+      echo '<span class="oi oi-plus">';
+      echo '</span>';
+      echo '&nbsp;';
       echo 'Add Detail';
       echo '</a>';
 
@@ -40,21 +43,23 @@
 
         // Header Field Icon
         echo '<div class="input-group-addon">';
-        echo '<span class="oi oi-header"></span>';
+        echo '<span class="oi oi-header">';
+        echo '</span>';
         echo '</div>';
 
         // Detail Header
-        echo '<input class="form-control"';
-        echo ' style="font-weight: bold;"';
-        echo ' type=text';
-        echo ' placeholder="header"';
-        echo ' value="';
+        echo '<input class="form-control" ';
+        echo 'style="font-weight: bold;" ';
+        echo 'type="text" ';
+        echo 'placeholder="header" ';
+        echo 'value="';
         echo $detail['header'];
         echo '">';
         echo '</input>';
 
         echo '</div>';
         echo '</div>';
+
         echo '<div class="col">';
         echo '<div class="input-group">';
 
