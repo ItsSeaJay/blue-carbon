@@ -41,7 +41,9 @@
           // If it doesn't, then we can continue to create it
           if ($project->total == 0)
           {
-            $query = "INSERT INTO `projects` (`id`, `title`, `subtitle`, `initiative`, `description`, `thumbnail`, `trailer`) VALUES (NULL, ?, ?, '', '', '', '')";
+            $query = "INSERT INTO `projects` (`id`, `title`, `subtitle`," .
+              " `initiative`, `description`, `thumbnail`, `trailer`)" .
+              " VALUES (NULL, ?, ?, '', '', '', '')";
 
             $GLOBALS['database']->prepared_statement($query, array($title, $subtitle));
 
