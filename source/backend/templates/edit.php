@@ -40,8 +40,6 @@
     <script src="scripts/preview-description.js" charset="utf-8"></script>
     <!-- New Detail -->
     <script src="scripts/new-detail.js"></script>
-    <!-- Delete Detail -->
-    <script src="scripts/delete-detail.js"></script>
   </head>
   <body>
     <!-- Header -->
@@ -184,7 +182,13 @@
                     <div class="input-group-addon">
                       <span class="oi oi-sort-descending"></span>
                     </div>
-                    <input class="form-control" type="number" name="initiative" value="<?php echo $project->initiative; ?>" placeholder="Initiative" maxlength="16">
+                    <input
+                      class="form-control"
+                      type="number"
+                      name="initiative"
+                      value="<?php echo $project->initiative; ?>"
+                      placeholder="Initiative"
+                      maxlength="16">
                   </div>
                 </div>
               </div>
@@ -218,22 +222,31 @@
                     <div class="input-group-addon">
                       <span class="oi oi-video"></span>
                     </div>
-                    <input class="form-control" type="text" name="trailer" value="<?php echo $project->trailer; ?>" placeholder="Trailer">
+                    <input
+                      class="form-control"
+                      type="text"
+                      name="trailer"
+                      value="<?php echo $project->trailer; ?>"
+                      placeholder="Trailer">
                   </div>
                 </div>
               </div>
             </div>
 
+
+
             <!-- Details -->
             <div class="row">
               <div class="col-md">
-                <h2>Details</h2>
-
-                <?php
-                  $detail_view->echo_details($project->id);
-                ?>
+                <a id="new-detail" class="btn btn-success" role="button" href="">
+                  <span class="oi oi-plus"></span>
+                  &nbsp;
+                  Add Detail
+                </a>
               </div>
             </div>
+
+            <?php $detail_view->echo_details($project->id); ?>
 
             <!-- Detail Padding -->
             <div style="padding-bottom: 64px;"></div>
@@ -252,7 +265,10 @@
                   Reset Changes
                 </button>
                 <!-- Button to trigger cancel modal -->
-                <a href="#cancel-modal" role="button" class="btn btn-danger" data-toggle="modal">
+                <a href="#cancel-modal"
+                  role="button"
+                  class="btn btn-danger"
+                  data-toggle="modal">
                   <span class="oi oi-circle-x"></span>
                   &nbsp;
                   Discard Changes

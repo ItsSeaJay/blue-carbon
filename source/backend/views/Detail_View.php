@@ -17,67 +17,80 @@
     {
       $details = $this->model->get_details($project);
 
-      echo '<div id="details">';
-
-      // New project Button
-      echo '<a class="btn btn-success" role="button" href="">';
-      echo '<span class="oi oi-plus">';
-      echo '</span>';
-      echo '&nbsp;';
-      echo 'Add Detail';
-      echo '</a>';
-
       foreach ($details as $detail)
       {
         echo '<hr>';
 
+        // Starting tags
         echo '<div class="row">';
 
-        // Delete button
         echo '<a href="">';
         echo '<span class="oi oi-x"></span>';
         echo '</a>';
 
-        echo '<div class="col">';
+        // Header divs start
+        echo '<div class="col-auto">';
+        echo '<div class="form-group">';
         echo '<div class="input-group">';
 
-        // Header Field Icon
+        // Header Addon
         echo '<div class="input-group-addon">';
-        echo '<span class="oi oi-header">';
-        echo '</span>';
+        echo '<span class="oi oi-header"></span>';
         echo '</div>';
 
-        // Detail Header
-        echo '<input class="form-control" ';
+        // Header input
+        echo '<input ';
         echo 'style="font-weight: bold;" ';
+        echo 'class="form-control" ';
+        echo 'name="';
+        echo 'header-' . $detail['id'];
+        echo '" ';
         echo 'type="text" ';
-        echo 'placeholder="header" ';
         echo 'value="';
         echo $detail['header'];
-        echo '">';
+        echo '" ';
+        echo 'placeholder="Header">';
         echo '</input>';
 
+        // Header divs end
+        echo '</div>';
         echo '</div>';
         echo '</div>';
 
+        // Content divs start
         echo '<div class="col">';
+
+        echo '<div class="form-group">';
         echo '<div class="input-group">';
 
-        // Content Field Icon
+        // Content Addon
         echo '<div class="input-group-addon">';
         echo '<span class="oi oi-ellipses"></span>';
         echo '</div>';
 
-        // Detail Content
-        echo '<input class="form-control" type=text placeholder="header"';
-        echo ' value="';
+        // Content input
+        echo '<input ';
+        echo 'class="form-control" ';
+        echo 'name="';
+        echo 'content-' . $detail['id'];
+        echo '" ';
+        echo 'type="text" ';
+        echo 'value="';
         echo $detail['detail'];
-        echo '">';
+        echo '" ';
+        echo 'placeholder="Content">';
         echo '</input>';
 
+        // Content divs end
         echo '</div>';
+        echo '</div>';
+        echo '</div>';
+
+        // Row ending tags
         echo '</div>';
       }
+
+      echo '<div id="details"></div>';
     }
   }
 
