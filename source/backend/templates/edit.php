@@ -250,6 +250,8 @@
               </div>
             </div>
 
+            <hr>
+
             <?php $detail_view->echo_details($project->id); ?>
 
             <!-- Detail Padding -->

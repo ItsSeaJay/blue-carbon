@@ -16,11 +16,9 @@
     public function echo_details($project)
     {
       $details = $this->model->get_details($project);
-
+      
       foreach ($details as $detail)
       {
-        echo '<hr>';
-
         // Starting tags
         echo '<div class="row" data-id="';
         echo $detail['id'];
