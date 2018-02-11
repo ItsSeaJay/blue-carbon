@@ -74,9 +74,18 @@
       echo $json;
     }
 
-    public function update_details($project)
+    public function update_detail()
     {
+      $query = "UPDATE `details` SET `header` = ?, `detail` = ?" .
+        " WHERE `id` = ?";
 
+      $data = array(
+        filter_var($_POST['header'], FILTER_SANITIZE_STRING),
+        filter_var($_POST['detail'], FILTER_SANITIZE_STRING),
+        $_POST['id']
+      );
+
+      $statement = $GLOBALS['database']->prepared_statement($query, $data);
     }
   }
 ?>
