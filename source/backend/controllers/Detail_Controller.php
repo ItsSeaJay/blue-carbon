@@ -33,12 +33,9 @@
           " VALUES (NULL, '', '', ?)";
         $statement = $GLOBALS['database']->prepared_statement($query, array($_POST['id']));
 
-        // Find that exact record in the database
-        $detail = $statement->fetchObject();
-
         $response['success'] = true;
         $response['message'] = 'Detail added to project ' . $_POST['id'];
-        $response['id'] = $detail->id;
+        $response['id'] = $GLOBALS['database']->get_PDO()->lastInsertID();
       }
       else
       {

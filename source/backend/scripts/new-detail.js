@@ -28,9 +28,9 @@ $(document).ready(function () {
 
       if (response.success) {
         var detail = `
-          <hr>
 
           <div class="row" data-id="` + response.id +`">
+            <hr>
 
             <a class="btn-delete-detail" href="">
               <span class="oi oi-x"></span>
