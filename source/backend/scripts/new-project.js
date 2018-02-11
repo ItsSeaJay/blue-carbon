@@ -1,9 +1,4 @@
 var request;
-var project = {
-  new: function (form) {
-    // TODO: Store request as a function
-  }
-};
 
 $('document').ready(function () {
   $('#details').submit(function (event) {
@@ -71,7 +66,7 @@ $('document').ready(function () {
           'The following error occurred: ',
           status,
           error
-        )
+        );
       });
 
       request.always(function () {

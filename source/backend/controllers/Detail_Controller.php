@@ -18,9 +18,37 @@
       return $this->model;
     }
 
+    public function add_detail()
+    {
+      $response = array(
+        'success' => false,
+        'message' => 'Unspecified error'
+      );
+
+      if (isset($_POST))
+      {
+        $query = "INSERT INTO `details` (`id`, `header`, `detail`, `project`)" .
+          " VALUES (NULL, '', '', ?)";
+
+        $statement = $GLOBALS['database']->prepared_statement($query, array($_POST['id']));
+
+        $response['success'] = true;
+        $response['message'] = 'Detail added to project ' . $_POST['id'];
+      }
+      else
+      {
+        $response['success'] = false;
+        $response['message'] = '$_POST Superglobal unset';
+      }
+
+      // Send back the JSON
+      $json = json_encode($response);
+      echo $json;
+    }
+
     public function update_details($project)
     {
-      
+
     }
   }
 ?>

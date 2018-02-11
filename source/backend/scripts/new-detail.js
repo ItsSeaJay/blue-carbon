@@ -1,57 +1,93 @@
+var request;
+
 $(document).ready(function () {
   var container = $('#details');
   var button = $('#new-detail');
+  var form = $('#project-form');
 
   button.on('click', function (event) {
     event.preventDefault();
 
-    var detail = `
-    <hr>
+    var data = form.serialize();
 
-    <div class="row">
+    if (request) {
+      request.abort();
+    }
 
-      <a href="">
-      <span class="oi oi-x"></span>
-      </a>
+    request = $.ajax({
+      url: 'add_detail.php',
+      type: 'post',
+      data: data
+    });
 
-      <div class="col-auto">
-        <div class="form-group">
-          <div class="input-group">
+    request.done(function (response, status, jqXHR) {
+      response = JSON.parse(response);
+      console.log(response);
 
-          <div class="input-group-addon">
-            <span class="oi oi-header"></span>
+      if (response.success) {
+        var detail = `
+          <hr>
+
+          <div class="row">
+
+            <a href="">
+            <span class="oi oi-x"></span>
+            </a>
+
+            <div class="col-auto">
+              <div class="form-group">
+                <div class="input-group">
+
+                <div class="input-group-addon">
+                  <span class="oi oi-header"></span>
+                </div>
+
+                <input
+                  class="form-control"
+                  type="text"
+                  placeholder="Header">
+                </input>
+
+              </div>
+            </div>
           </div>
 
-          <input
-            class="form-control"
-            type="text"
-            placeholder="Header">
-          </input>
+          <div class="col">
 
-        </div>
-      </div>
-    </div>
+            <div class="form-group">
+              <div class="input-group">
 
-    <div class="col">
+                <div class="input-group-addon">
+                  <span class="oi oi-ellipses"></span>
+                </div>
 
-      <div class="form-group">
-        <div class="input-group">
+                <input
+                  class="form-control"
+                  type="text"
+                  placeholder="Content">
+                </input>
 
-          <div class="input-group-addon">
-            <span class="oi oi-ellipses"></span>
+              </div>
+            </div>
           </div>
+        `;
 
-          <input
-            class="form-control"
-            type="text"
-            placeholder="Content">
-          </input>
+        $(detail).hide().appendTo(container).slideDown();
+      } else {
+        consol.error(response.message);
+      }
+    });
 
-        </div>
-      </div>
-    </div>
-    `;
+    request.fail(function (jqXHR, status, error) {
+      console.error(
+        'The following error occurred: ',
+        status,
+        error
+      );
+    });
 
-    $(detail).hide().appendTo(container).slideDown();
+    request.always(function () {
+
+    });
   });
 });

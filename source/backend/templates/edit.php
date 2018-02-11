@@ -98,7 +98,7 @@
         <!-- Form Body -->
         <div class="col-md">
           <h2>Project</h2>
-          <form action="edit_project.php" method="post">
+          <form id="project-form" action="edit_project.php" method="post">
             <!-- ID -->
             <input type="number" name="id" value="<?php echo $project->id; ?>" hidden="true">
             <!-- Title -->
