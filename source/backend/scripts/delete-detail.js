@@ -4,11 +4,6 @@ $(document).ready(function () {
   var buttons = $('.btn-delete-detail');
   var form = $('#project-form');
 
-  $(document).click(function (event) {
-    buttons = $('.btn-delete-detail');
-    console.log(buttons);
-  });
-
   for (var button = 0; button < buttons.length; button++) {
     $(buttons[button]).click(function (event) {
       var node = $(this).parent();
@@ -35,7 +30,9 @@ $(document).ready(function () {
         console.log(response);
 
         if (response.success) {
-          node.fadeOut();
+          node.fadeOut(300, function () {
+            $(this).remove();
+          });
         } else {
           console.error(response.message);
         }
@@ -47,10 +44,6 @@ $(document).ready(function () {
           status,
           error
         );
-      });
-
-      request.always(function () {
-        // Purposefully left blank
       });
     });
   }

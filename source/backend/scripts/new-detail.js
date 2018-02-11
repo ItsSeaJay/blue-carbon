@@ -24,8 +24,6 @@ $(document).ready(function () {
       response = JSON.parse(response);
       console.log(response);
 
-      // TODO: add the data-id attribute
-
       if (response.success) {
         var detail = `
           <div class="row" data-id="` + response.id +`">
@@ -43,7 +41,7 @@ $(document).ready(function () {
                 </div>
 
                 <input
-                  style="font-weight: bold;" 
+                  style="font-weight: bold;"
                   class="form-control"
                   type="text"
                   placeholder="Header">

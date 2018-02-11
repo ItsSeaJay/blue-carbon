@@ -49,7 +49,9 @@ $('document').ready(function () {
 
               if (response.success) {
                 modal.modal('hide');
-                node.fadeOut();
+                node.fadeOut(300, function () {
+                  $(this).remove();
+                });
                 form[0].reset();
               } else {
                 console.error(response.message);
