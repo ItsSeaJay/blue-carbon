@@ -24,14 +24,16 @@ $(document).ready(function () {
       response = JSON.parse(response);
       console.log(response);
 
+      // TODO: add the data-id attribute
+
       if (response.success) {
         var detail = `
           <hr>
 
           <div class="row">
 
-            <a href="">
-            <span class="oi oi-x"></span>
+            <a class="btn btn-danger btn-delete-detail" href="">
+              <span class="oi oi-x"></span>
             </a>
 
             <div class="col-auto">

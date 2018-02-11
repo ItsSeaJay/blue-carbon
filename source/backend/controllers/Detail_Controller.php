@@ -41,7 +41,19 @@
         $response['message'] = '$_POST Superglobal unset';
       }
 
-      // Send back the JSON
+      $json = json_encode($response);
+      echo $json;
+    }
+
+    public function remove_detail()
+    {
+      $response = array(
+        'success' => false,
+        'message' => 'Unspecified error'
+      );
+
+      
+
       $json = json_encode($response);
       echo $json;
     }

@@ -22,9 +22,11 @@
         echo '<hr>';
 
         // Starting tags
-        echo '<div class="row">';
+        echo '<div class="row" data-id="';
+        echo $detail['id'];
+        echo '">'
 
-        echo '<a href="">';
+        echo '<a class="btn btn-danger btn-delete-detail" role="button" href="">';
         echo '<span class="oi oi-x"></span>';
         echo '</a>';
 
