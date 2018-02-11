@@ -89,7 +89,7 @@ $(document).ready(function () {
     });
 
     request.always(function () {
-
+      // Purposefully left blank
     });
   });
 });

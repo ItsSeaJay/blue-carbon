@@ -40,6 +40,8 @@
     <script src="scripts/preview-description.js" charset="utf-8"></script>
     <!-- New Detail -->
     <script src="scripts/new-detail.js"></script>
+    <!-- Delete Detail -->
+    <script src="scripts/delete-detail.js"></script>
   </head>
   <body>
     <!-- Header -->

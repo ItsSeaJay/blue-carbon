@@ -1,12 +1,14 @@
 var request;
 
 $(document).ready(function () {
-  var buttons = $('btn-delete-detail');
-  var form = $('project-form');
+  var buttons = $('.btn-delete-detail');
+  var form = $('#project-form');
+
+  console.log(buttons);
 
   for (var button = 0; button < buttons.length; button++) {
     $(buttons[button]).click(function (event) {
-      var target = $(this).parent();
+      var node = $(this).parent();
 
       event.preventDefault();
 
@@ -14,13 +16,36 @@ $(document).ready(function () {
         request.abort();
       }
 
-      data = target.data('id');
+      data = node.data('id');
 
       request = $.ajax({
         url: 'remove_detail.php',
-        type: post,
-        data
+        type: 'post',
+        data: data
       });
-    })
+
+      request.done(function (response, status, jqXHR) {
+        response = JSON.parse(response);
+        console.log(response);
+
+        if (response.success) {
+          node.fadeOut();
+        } else {
+          console.error(response.message);
+        }
+      });
+
+      request.fail(function (jqXHR, status, error) {
+        console.error(
+          'The following error occurred: ',
+          status,
+          error
+        );
+      });
+
+      request.always(function () {
+        // Purposefully left blank
+      });
+    });
   }
 });
