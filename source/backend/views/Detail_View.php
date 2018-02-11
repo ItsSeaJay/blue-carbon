@@ -26,7 +26,7 @@
         echo $detail['id'];
         echo '">';
 
-        echo '<a class="btn btn-danger btn-delete-detail" role="button" href="">';
+        echo '<a class="btn-delete-detail" role="button" href="">';
         echo '<span class="oi oi-x"></span>';
         echo '</a>';
 

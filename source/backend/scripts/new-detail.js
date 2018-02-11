@@ -30,9 +30,9 @@ $(document).ready(function () {
         var detail = `
           <hr>
 
-          <div class="row">
+          <div class="row" data-id="` + response.id +`">
 
-            <a class="btn btn-danger btn-delete-detail" href="">
+            <a class="btn-delete-detail" href="">
               <span class="oi oi-x"></span>
             </a>
 
