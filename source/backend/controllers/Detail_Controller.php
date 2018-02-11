@@ -53,11 +53,16 @@
       );
 
       if (isset($_POST)) {
-        $query = "DELETE FROM `details` WHERE `details`.`id` = ?";
-        $statement = $GLOBALS['database']->prepared_statement($query, array($_POST['id']));
+        if (isset($_POST['id'])) {
+          $query = "DELETE FROM `details` WHERE `details`.`id` = ?";
+          $statement = $GLOBALS['database']->prepared_statement($query, array($_POST['id']));
 
-        $response['success'] = true;
-        $response['message'] = 'Successfully removed detail ' . $_POST['id'];
+          $response['success'] = true;
+          $response['message'] = 'Successfully removed detail ' . $_POST['id'];
+        } else {
+          $response['success'] = false;
+          $response['message'] = 'Detail ID was not sent';
+        }
       } else {
         $response['success'] = false;
         $response['message'] = '$_POST Superglobal unset';

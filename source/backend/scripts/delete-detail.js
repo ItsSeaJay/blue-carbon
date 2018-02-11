@@ -16,7 +16,10 @@ $(document).ready(function () {
         request.abort();
       }
 
-      data = node.data('id');
+      id = node.data('id');
+      data = {
+        'id': id
+      };
 
       request = $.ajax({
         url: 'remove_detail.php',

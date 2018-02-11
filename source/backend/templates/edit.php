@@ -240,6 +240,8 @@
             <!-- Details -->
             <div class="row">
               <div class="col-md">
+                <h2>Details</h2>
+
                 <a id="new-detail" class="btn btn-success" role="button" href="">
                   <span class="oi oi-plus"></span>
                   &nbsp;
