@@ -43,6 +43,7 @@ $(document).ready(function () {
                 </div>
 
                 <input
+                  style="font-weight: bold;" 
                   class="form-control"
                   type="text"
                   placeholder="Header">

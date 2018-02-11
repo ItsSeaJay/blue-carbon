@@ -4,7 +4,10 @@ $(document).ready(function () {
   var buttons = $('.btn-delete-detail');
   var form = $('#project-form');
 
-  console.log(buttons);
+  $(document).click(function (event) {
+    buttons = $('.btn-delete-detail');
+    console.log(buttons);
+  });
 
   for (var button = 0; button < buttons.length; button++) {
     $(buttons[button]).click(function (event) {
