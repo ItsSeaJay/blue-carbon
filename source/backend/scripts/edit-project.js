@@ -28,27 +28,29 @@ $(document).ready(function () {
 
     var form = $('#project-form');
 
-    if (request) {
-      request.abort();
+    if (details.length > 0) {
+      if (request) {
+        request.abort();
+      }
+
+      request = $.ajax({
+        url: 'update_detail.php',
+        type: 'post',
+        data: details[0]
+      });
+
+      request.done(function (response, textStatus, jqXHR) {
+        console.log(response);
+        response = JSON.parse(response);
+        console.log(response);
+      });
+
+      request.fail(function (jqXHR, textStatus, errorThrown) {
+        console.error(
+            'The following error occurred: ' +
+            textStatus, errorThrown
+        );
+      });
     }
-
-    request = $.ajax({
-      url: 'update_detail.php',
-      type: 'post',
-      data: details[0]
-    });
-
-    request.done(function (response, textStatus, jqXHR) {
-      console.log(response);
-      response = JSON.parse(response);
-      console.log(response);
-    });
-
-    request.fail(function (jqXHR, textStatus, errorThrown) {
-      console.error(
-          'The following error occurred: ' +
-          textStatus, errorThrown
-      );
-    });
   });
 });
