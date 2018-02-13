@@ -16,7 +16,7 @@
     public function echo_details($project)
     {
       $details = $this->model->get_details($project);
-      
+
       foreach ($details as $detail)
       {
         // Starting tags
@@ -41,7 +41,7 @@
         // Header input
         echo '<input ';
         echo 'style="font-weight: bold;" ';
-        echo 'class="form-control" ';
+        echo 'class="form-control input-detail-header" ';
         echo 'name="';
         echo 'header-' . $detail['id'];
         echo '" ';
@@ -70,7 +70,7 @@
 
         // Content input
         echo '<input ';
-        echo 'class="form-control" ';
+        echo 'class="form-control input-detail-content" ';
         echo 'name="';
         echo 'content-' . $detail['id'];
         echo '" ';

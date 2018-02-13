@@ -42,6 +42,8 @@
     <script src="scripts/new-detail.js"></script>
     <!-- Delete Detail -->
     <script src="scripts/delete-detail.js"></script>
+    <!-- Edit Project -->
+    <script src="scripts/edit-project.js"></script>
   </head>
   <body>
     <!-- Header -->
