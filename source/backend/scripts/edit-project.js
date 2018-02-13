@@ -24,8 +24,6 @@ $(document).ready(function () {
       details.push(detail);
     }
 
-    console.log(details);
-
     if (details.length > 0) {
       var updateDetail = function (i) {
         if (i < details.length) {
@@ -40,11 +38,9 @@ $(document).ready(function () {
           });
 
           request.done(function (response, textStatus, jqXHR) {
-            console.log(response);
             response = JSON.parse(response);
 
             if (response.success) {
-              console.log(response.message);
               i++;
               updateDetail(i);
             } else {
