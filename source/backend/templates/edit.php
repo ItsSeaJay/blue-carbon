@@ -263,7 +263,11 @@
             <div class="row">
               <div class="col-md">
                 <!-- Button to Save Changes -->
-                <button class="btn btn-success" type="submit" name="save">
+                <button
+                  id="button-project-submit"
+                  class="btn btn-success"
+                  type="submit"
+                  name="save">
                   <span class="oi oi-circle-check"></span>
                   &nbsp;
                   Save Changes

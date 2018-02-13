@@ -53,7 +53,6 @@ $(document).ready(function () {
   $('#password-required').hide();
 
   if (location.protocol != 'https:') {
-    // TODO: Add a message to encourage users to use a secure connection
     console.warn('Connection is not secure.');
   }
 
