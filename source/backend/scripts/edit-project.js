@@ -1,7 +1,7 @@
 var request;
 
 $(document).ready(function () {
-  $(document).click(function () {
+  $('input').click(function () {
     var details = [];
 
     var headerInputs = $('.input-detail-header');
@@ -25,8 +25,6 @@ $(document).ready(function () {
     }
 
     console.log(details);
-
-    var form = $('#project-form');
 
     if (details.length > 0) {
       var updateDetail = function (i) {
@@ -60,7 +58,7 @@ $(document).ready(function () {
                 textStatus, errorThrown
             );
           });
-        };
+        }
       };
 
       var iteration = 0;

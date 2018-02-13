@@ -237,8 +237,6 @@
               </div>
             </div>
 
-
-
             <!-- Details -->
             <div class="row">
               <div class="col-md">
