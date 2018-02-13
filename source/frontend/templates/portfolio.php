@@ -13,19 +13,18 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Blue Carbon</title>
+    <title><?php echo $full_name ?></title>
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
   </head>
   <body>
-    <header class="jumbotron">
-      <h1>
+    <header class="container">
+      <h1 style="text-align: center;">
         <a href="index.php"><?php echo $full_name ?></a>
       </h1>
     </header>
 
     <div class="container">
-      <!-- Thumbnails -->
       <?php
         // Echo project thumbnails
         $project_count = 0;
@@ -41,12 +40,14 @@
             {
               echo '</div>';
             }
+            // Otherwise, insert a new row
             echo '<div class="row">';
           }
 
-          echo '<div class="thumbnail col-md-4">';
+          // Output single thumbnail
+          echo '<div class="thumbnail col-md">';
           echo '<a href="project.php?title=' . urlencode($project['title']) . '">';
-          echo '<img class="responsive" src="' . $project['thumbnail'] . '">';
+          echo '<img alt="' . $project['title'] . ' Project Thumbnail" class="responsive img-thumbnail" src="' . $project['thumbnail'] . '">';
           echo '<h1>' . $project['title'] . '</h1>';
           echo '<p>' . $project['subtitle'] . '</p>';
           echo '</a>';
@@ -54,10 +55,14 @@
 
           $project_count++;
         }
+
+        echo '</div>';
       ?>
     </div>
-    <footer class="jumbotron">
-      <small><?php echo $copyright; ?></small>
+    <footer class="container">
+      <small class="text-center">
+        <?php echo $copyright; ?>
+      </small>
     </footer>
   </body>
 </html>

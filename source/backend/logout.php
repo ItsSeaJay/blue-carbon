@@ -7,5 +7,5 @@
   $user_model = new User_Model($user_template);
   $user_controller = new User_Controller($user_model);
 
-  $user_controller->login();
+  $user_controller->logout();
 ?>

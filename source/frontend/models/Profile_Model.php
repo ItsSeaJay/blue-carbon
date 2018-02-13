@@ -39,7 +39,7 @@
 
       $profile = $statement->fetchObject();
 
-      $full_name = $profile->first_name . ' ' . $profile->last_name;
+      $full_name = $profile->first_name . ' ' . $profile->middle_name . ' ' . $profile->last_name;
 
       return $full_name;
     }
