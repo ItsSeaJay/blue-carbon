@@ -20,7 +20,7 @@
       foreach ($details as $detail)
       {
         // Starting tags
-        echo '<div class="row" data-id="';
+        echo '<div class="row row-detail" data-id="';
         echo $detail['id'];
         echo '">';
 

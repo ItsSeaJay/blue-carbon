@@ -54,18 +54,24 @@
         'message' => 'Unspecified error'
       );
 
-      if (isset($_POST)) {
-        if (isset($_POST['id'])) {
+      if (isset($_POST))
+      {
+        if (isset($_POST['id']))
+        {
           $query = "DELETE FROM `details` WHERE `details`.`id` = ?";
           $statement = $GLOBALS['database']->prepared_statement($query, array($_POST['id']));
 
           $response['success'] = true;
           $response['message'] = 'Successfully removed detail ' . $_POST['id'];
-        } else {
+        }
+        else
+        {
           $response['success'] = false;
           $response['message'] = 'Detail ID was not sent';
         }
-      } else {
+      }
+      else
+      {
         $response['success'] = false;
         $response['message'] = '$_POST Superglobal unset';
       }
@@ -76,16 +82,34 @@
 
     public function update_detail()
     {
-      $query = "UPDATE `details` SET `header` = ?, `detail` = ?" .
-        " WHERE `id` = ?";
-
-      $data = array(
-        filter_var($_POST['header'], FILTER_SANITIZE_STRING),
-        filter_var($_POST['detail'], FILTER_SANITIZE_STRING),
-        $_POST['id']
+      $response = array(
+        'success' => false,
+        'message' => 'Unspecified error'
       );
 
-      $statement = $GLOBALS['database']->prepared_statement($query, $data);
+      if (isset($_POST))
+      {
+        $query = "UPDATE `details` SET `header` = ?, `detail` = ? WHERE `id` = ?";
+
+        $data = array(
+          filter_var($_POST['header'], FILTER_SANITIZE_STRING),
+          filter_var($_POST['content'], FILTER_SANITIZE_STRING),
+          $_POST['id']
+        );
+
+        $statement = $GLOBALS['database']->prepared_statement($query, $data);
+
+        $response['success'] = true;
+        $response['message'] = 'Updated detail ' . $_POST['id'];
+      }
+      else
+      {
+        $response['success'] = false;
+        $response['message'] = '$_POST Superglobal unset';
+      }
+
+      $json = json_encode($response);
+      echo $json;
     }
   }
 ?>
