@@ -80,9 +80,9 @@
               else
               {
                 // Assume HTML5 video
-                echo '<video width="100%" height="auto" controls poster=';
+                echo '<video width="100%" height="auto" controls poster="';
                 echo $project->thumbnail;
-                echo '>';
+                echo '">';
                 echo '<source src="';
                 echo $project->trailer;
                 echo '" kind="video/mp4">'; // Assume .mp4 MIME type
@@ -94,9 +94,9 @@
             else
             {
               // Show the thumbnail instead
-              echo '<img width="100%" height="auto" alt=';
+              echo '<img width="100%" height="auto" alt="';
               echo $project->title;
-              echo '" src="';
+              echo ' Thumbnail" src="';
               echo $project->thumbnail;
               echo '">';
             }
