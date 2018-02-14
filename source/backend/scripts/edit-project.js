@@ -12,10 +12,12 @@ $(document).ready(function () {
   });
 
   $('.input-detail-header').on('input', function () {
+    refreshInputs();
     updateDetails();
   });
 
   $('.input-detail-content').on('input', function () {
+    refreshInputs();
     updateDetails();
   });
 });

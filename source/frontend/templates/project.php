@@ -1,5 +1,12 @@
 <?php
+  require_once '../libraries/parsedown/Parsedown.php';
+  require_once '../libraries/htmlpurifier/library/HTMLPurifier.auto.php';
   require_once 'frontend/models/Profile_Model.php';
+
+  $parsedown = new Parsedown();
+
+  $config = HTMLPurifier_Config::createDefault();
+  $purifier = new HTMLPurifier($config);
 
   $profile_model = new Profile_Model('frontend/templates/project.php');
   $full_name = $profile_model->get_full_name();
@@ -47,10 +54,10 @@
               {
                 echo '<li>';
                 echo '<strong>';
-                echo $detail->header;
+                echo $purifier->purify($detail->header);
                 echo ' ';
                 echo '</strong>';
-                echo $detail->detail;
+                echo $purifier->purify($parsedown->text($detail->detail));
                 echo '</li>';
               }
             ?>
@@ -97,11 +104,8 @@
           <!-- Description -->
           <p>
             <?php
-              require_once '../libraries/parsedown/parsedown.php';
-
-              $parsedown = new Parsedown();
-
-              echo $parsedown->text($project->description);
+              $clean_description = $purifier->purify($project->description);
+              echo $parsedown->text($clean_description);
             ?>
           </p>
         </div>
