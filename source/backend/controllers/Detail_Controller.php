@@ -92,16 +92,20 @@
         if (isset($_POST['details']))
         {
           // Decode all the details as an associative array
-          $details = array($_POST['details']);
+          $details = json_decode($_POST['details'], true);
 
           foreach ($details as $detail)
           {
             $query = "UPDATE `details` SET `header` = ?, `detail` = ? WHERE `id` = ?";
-            $statement = $GLOBALS['database']->prepared_statement($query, $detail);
+
+            $statement = $GLOBALS['database']->prepared_statement(
+              $query,
+              array($detail['header'], $detail['content'], $detail['id'])
+            );
           }
 
           $response['success'] = true;
-          $response['message'] = 'Updated details successfully!' . $statement;
+          $response['message'] = 'Updated details successfully!';
         }
         else
         {
