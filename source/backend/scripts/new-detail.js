@@ -26,7 +26,7 @@ $(document).ready(function () {
 
       if (response.success) {
         var detail = `
-          <div class="row" data-id="` + response.id +`">
+          <div class="row row-detail" data-id="` + response.id +`">
 
             <a class="btn-delete-detail" href="">
               <span class="oi oi-x"></span>
@@ -42,7 +42,7 @@ $(document).ready(function () {
 
                 <input
                   style="font-weight: bold;"
-                  class="form-control"
+                  class="form-control input-detail-header"
                   type="text"
                   placeholder="Header">
                 </input>
@@ -61,7 +61,7 @@ $(document).ready(function () {
                 </div>
 
                 <input
-                  class="form-control"
+                  class="form-control input-detail-content"
                   type="text"
                   placeholder="Content">
                 </input>

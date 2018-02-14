@@ -1,7 +1,7 @@
 var request;
 
 $(document).ready(function () {
-  $('input').click(function () {
+  $('input').on('input', function () {
     var details = [];
 
     var headerInputs = $('.input-detail-header');
@@ -24,41 +24,30 @@ $(document).ready(function () {
       details.push(detail);
     }
 
+    console.log(details);
+
     if (details.length > 0) {
-      var updateDetail = function (i) {
-        if (i < details.length) {
-          if (request) {
-            request.abort();
-          }
+      if (request) {
+        request.abort();
+      }
 
-          request = $.ajax({
-            url: 'update_detail.php',
-            type: 'post',
-            data: details[i]
-          });
+      request = $.ajax({
+        url: 'update_details.php',
+        type: 'post',
+        data: details
+      });
 
-          request.done(function (response, textStatus, jqXHR) {
-            response = JSON.parse(response);
+      request.done(function (response, textStatus, jqXHR) {
+        response = JSON.parse(response);
+        console.log(response);
+      });
 
-            if (response.success) {
-              i++;
-              updateDetail(i);
-            } else {
-              console.error(response.message);
-            }
-          });
-
-          request.fail(function (jqXHR, textStatus, errorThrown) {
-            console.error(
-                'The following error occurred: ' +
-                textStatus, errorThrown
-            );
-          });
-        }
-      };
-
-      var iteration = 0;
-      updateDetail(iteration);
+      request.fail(function (jqXHR, textStatus, errorThrown) {
+        console.error(
+            'The following error occurred: ' +
+            textStatus, errorThrown
+        );
+      });
     }
   });
 });

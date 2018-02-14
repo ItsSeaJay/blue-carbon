@@ -8,5 +8,5 @@
   $detail_controller = new Detail_Controller($detail_model);
   $detail_view = new Detail_View($detail_model, $detail_controller);
 
-  $detail_controller->update_detail();
+  $detail_controller->update_details();
 ?>

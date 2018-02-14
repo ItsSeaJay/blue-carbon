@@ -80,7 +80,7 @@
       echo $json;
     }
 
-    public function update_detail()
+    public function update_details()
     {
       $response = array(
         'success' => false,
@@ -89,18 +89,25 @@
 
       if (isset($_POST))
       {
-        $query = "UPDATE `details` SET `header` = ?, `detail` = ? WHERE `id` = ?";
+        if (isset($_POST['details']))
+        {
+          // Decode all the details as an associative array
+          $details = array($_POST['details']);
 
-        $data = array(
-          filter_var($_POST['header'], FILTER_SANITIZE_STRING),
-          filter_var($_POST['content'], FILTER_SANITIZE_STRING),
-          $_POST['id']
-        );
+          foreach ($details as $detail)
+          {
+            $query = "UPDATE `details` SET `header` = ?, `detail` = ? WHERE `id` = ?";
+            $statement = $GLOBALS['database']->prepared_statement($query, $detail);
+          }
 
-        $statement = $GLOBALS['database']->prepared_statement($query, $data);
-
-        $response['success'] = true;
-        $response['message'] = 'Updated detail ' . $_POST['id'];
+          $response['success'] = true;
+          $response['message'] = 'Updated details successfully!' . $statement;
+        }
+        else
+        {
+          $response['success'] = false;
+          $response['message'] = 'Details array was not posted';
+        }
       }
       else
       {
