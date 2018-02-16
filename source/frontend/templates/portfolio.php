@@ -14,13 +14,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?php echo $full_name ?></title>
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="frontend/styles/main.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
   </head>
   <body>
-    <header class="container">
+    <header class="container title">
       <h1 style="text-align: center;">
-        <a href="index.php"><?php echo $full_name ?></a>
+        <a href="index.php">
+          <?php echo $full_name ?>
+        </a>
       </h1>
     </header>
 
