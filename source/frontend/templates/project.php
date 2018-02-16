@@ -24,11 +24,11 @@
     <title><?php echo $project->title; ?></title>
 
     <!-- Styles -->
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="frontend/styles/main.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
   </head>
   <body>
-    <header class="container">
+    <header class="container title">
       <h1 class="text-center">
         <a href="index.php"><?php echo $full_name ?></a>
       </h1>
@@ -114,9 +114,11 @@
 
     <footer class="container">
       <!-- Copyright Notice -->
-      <small class="text-center">
-        <?php echo $copyright; ?>
-      </small>
+      <div class="copyright">
+        <small class="text-center">
+          <?php echo $copyright; ?>
+        </small>
+      </div>
     </footer>
   </body>
 </html>

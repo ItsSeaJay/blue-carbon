@@ -62,9 +62,11 @@
       ?>
     </div>
     <footer class="container">
-      <small class="text-center">
-        <?php echo $copyright; ?>
-      </small>
+      <div class="copyright">
+        <small class="copyright">
+          <?php echo $copyright; ?>
+        </small>
+      </div>
     </footer>
   </body>
 </html>
